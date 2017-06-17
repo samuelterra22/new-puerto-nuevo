@@ -2,8 +2,9 @@ package br.edu.ifmg.simulacao;
 
 import java.util.HashMap;
 import java.util.Map;
+
 /**
- * Created by samuel on 16/06/17.
+ * Classe que guarda os valores do arquivo de entrada e retorna os valores das distribuições.
  */
 public class Distribuicoes {
 

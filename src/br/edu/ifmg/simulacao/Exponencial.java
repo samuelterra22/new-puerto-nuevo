@@ -1,5 +1,8 @@
 package br.edu.ifmg.simulacao;
 
+/**
+ * Classe que representa uma distribuição exponencial na simulação.
+ * */
 public class Exponencial extends Random{
 
     private Double lambda;

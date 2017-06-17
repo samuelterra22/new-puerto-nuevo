@@ -1,6 +1,8 @@
 package br.edu.ifmg.simulacao;
 
-
+/**
+ * Classe que representa uma distribuição triângular na simulação.
+ * */
 public class Triangular{
 
     private Double a;

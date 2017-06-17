@@ -1,6 +1,8 @@
 package br.edu.ifmg.simulacao;
 
-
+/**
+ * Classe que guarda todas as informações sobre as entidades do sistema.
+ * */
 public class Entidades {
 
     // qtd de cada entidade

@@ -1,7 +1,8 @@
 package br.edu.ifmg.simulacao;
 
-import java.util.HashMap;
-
+/**
+ * Classe que implementa todos os metodos randomicos necessarios.
+ * */
 public class Random {
     private Double A = 69069.0;
     private int C = 1;
