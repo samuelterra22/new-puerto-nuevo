@@ -354,16 +354,16 @@ public class Distribuicoes {
     /*******************************************************************************************************************
      *  Comp. Ferroviaria - Tempo de chegada de composicoes no terminal ferroviario
      ******************************************************************************************************************/
-    public void setTempoFerroviariaChegada(Double a, Double b, Double c){
-        distribuicoes.put(T_CHG, new Triangular(a,b,c));
+    public void setTempoFerroviariaChegada(Double lamb){
+        distribuicoes.put(T_CHG, new Exponencial(lamb));
     }
 
-    public Triangular getTempoFerroviariaChegada(){
-        return (Triangular) this.distribuicoes.get(T_CHG);
+    public Exponencial getTempoFerroviariaChegada(){
+        return (Exponencial) this.distribuicoes.get(T_CHG);
     }
 
     public Double getTempoRandomFerroviariaChegada(){
-        Triangular e = (Triangular) this.distribuicoes.get(T_CHG);
+        Exponencial e = (Exponencial) this.distribuicoes.get(T_CHG);
         return e.getRandomDistribuicao();
     }
 

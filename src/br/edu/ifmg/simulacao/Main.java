@@ -18,5 +18,12 @@ public class Main {
         //System.out.println(en.getTempoSimulacao());
         //System.out.println(en.getQtdGrua());
 
+        Distribuicoes d = e.getDistribuicoes();
+        Triangular t = d.getTempoGruaRetornaGuindasteVazio();
+        //System.out.println(t.getA());
+        //System.out.println(t.getB());
+        //System.out.println(t.getC());
+        //System.out.println(t.getRandomDistribuicao());
+
     }
 }
