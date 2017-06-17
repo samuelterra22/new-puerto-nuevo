@@ -1,7 +1,7 @@
 package br.edu.ifmg.simulacao;
 
 
-public class Triangular {
+public class Triangular{
 
     private Double a;
     private Double b;

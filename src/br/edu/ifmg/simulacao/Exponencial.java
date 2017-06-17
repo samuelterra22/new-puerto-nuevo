@@ -1,8 +1,8 @@
 package br.edu.ifmg.simulacao;
 
-public class Exponencial {
+public class Exponencial extends Random{
 
-    Double lambda;
+    private Double lambda;
 
     public Exponencial(Double lambda) {
         this.lambda = lambda;
@@ -14,6 +14,10 @@ public class Exponencial {
 
     public void setLambda(Double lambda) {
         this.lambda = lambda;
+    }
+
+    public Double getRandomDistribuicao(){
+        return super.exponential(this.lambda);
     }
 
 }

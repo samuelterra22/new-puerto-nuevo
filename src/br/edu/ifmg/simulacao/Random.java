@@ -3,43 +3,43 @@ package br.edu.ifmg.simulacao;
 import java.util.HashMap;
 
 public class Random {
-    private long A = 69069;
+    private Double A = 69069.0;
     private int C = 1;
-    private long M = (long)Math.pow(2, 32);
-    private double currentValue;
+    private Double M = (Double)Math.pow(2, 32);
+    private Double currentValue;
 
-    public void setSeed(double seed){
+    public void setSeed(Double seed){
         this.currentValue = seed;
     }
 
     //distribuição uniforme e suas variações
-    public long uniform(){
-        this.currentValue = ((long)A*this.currentValue+C)%M;
-        return (long)this.currentValue;
+    public Double uniform(){
+        this.currentValue = ((Double)A*this.currentValue+C)%M;
+        return (Double)this.currentValue;
     }
 
-    public long uniform(long n){
-        //this.currentValue = (long)(A*this.currentValue+C)%M;
+    public Double uniform(Double n){
+        //this.currentValue = (Double)(A*this.currentValue+C)%M;
         return this.uniform()%n;
     }
 
-    public long uniform(long m, long n){
-        //this.currentValue = (long)(A*this.currentValue+C)%M;
+    public Double uniform(Double m, Double n){
+        //this.currentValue = (Double)(A*this.currentValue+C)%M;
         return m+this.uniform()%(n-m);
     }
 
-    public double percentual(){
+    public Double percentual(){
         //this.currentValue = (C*this.currentValue+A)%M;
-        return (double)this.uniform()/M;
+        return (Double)this.uniform()/M;
     }
 
     //funções derivadas da função percentual
-    public double normal(double mean, double variance){
+    public Double normal(Double mean, Double variance){
         int i, n;
-        double sum;
+        Double sum;
 
         n = 128;
-        sum = 0;
+        sum = 0.0;
         for(i=0;i<n;i++){
             sum = sum+this.percentual();
         }
@@ -47,12 +47,12 @@ public class Random {
         return mean+variance*( ( (sum-(n/2)) / ((Math.sqrt(n/12.0)) ) ) );
     }
 
-    public double exponential(double lambda){
+    public Double exponential(Double lambda){
         return -(1.0/lambda)*Math.log(1.0-this.percentual());
     }
 
-    public double triangular(double a, double b, double c){
-        double x;
+    public Double triangular(Double a, Double b, Double c){
+        Double x;
 
         x = this.percentual();
         if(x>=a && x<c){
@@ -66,7 +66,7 @@ public class Random {
         }
     }
 
-    public double poison(){     //ainda não implementada
-        return 0;
+    public Double poison(){     //ainda não implementada
+        return 0.0;
     }
 }

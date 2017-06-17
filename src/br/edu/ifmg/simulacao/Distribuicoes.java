@@ -7,7 +7,10 @@ import java.util.Map;
  */
 public class Distribuicoes {
 
+    /* HashMap para guardar as entradas com os valores das distibuições */
     private Map<Integer, Random> distribuicoes;
+
+    /* Constantes */
 
     private final int N_CHG = 1;    // tempo de chegada de navio
 
@@ -39,7 +42,18 @@ public class Distribuicoes {
     private final int T_POS = 22;    // tempo de
     private final int T_LIB = 23;    // tempo de
 
+    /* Construtor */
     public Distribuicoes() {
         this.distribuicoes = new HashMap<Integer, Random>();
+    }
+
+    /*   Tempo de chagadade navios   */
+    public void setTempoChegadaNavio(Double lamb){
+        distribuicoes.put(N_CHG, new Exponencial(lamb));
+    }
+
+    public Double getTempoChegadaNavio(){
+        Exponencial e = (Exponencial) this.distribuicoes.get(N_CHG);
+        return e.getLambda();
     }
 }
