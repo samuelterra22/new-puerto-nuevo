@@ -18,6 +18,11 @@ public class Entidades {
     private int qtdRTG;
     private int qtdReachStacker;
     private int qtdTerminalCarga;
+    private int qtdMinVagoesComposicao;
+    private int qtdMaxVagoesComposicao;
+
+    private Double tempoSimulacao;
+
 
     public Entidades() {    }
 
@@ -75,5 +80,29 @@ public class Entidades {
 
     public void setQtdTerminalCarga(int qtdTerminalCarga) {
         this.qtdTerminalCarga = qtdTerminalCarga;
+    }
+
+    public int getQtdMinVagoesComposicao() {
+        return qtdMinVagoesComposicao;
+    }
+
+    public void setQtdMinVagoesComposicao(int qtdMinVagoesComposicao) {
+        this.qtdMinVagoesComposicao = qtdMinVagoesComposicao;
+    }
+
+    public int getQtdMaxVagoesComposicao() {
+        return qtdMaxVagoesComposicao;
+    }
+
+    public void setQtdMaxVagoesComposicao(int qtdMaxVagoesComposicao) {
+        this.qtdMaxVagoesComposicao = qtdMaxVagoesComposicao;
+    }
+
+    public Double getTempoSimulacao() {
+        return tempoSimulacao;
+    }
+
+    public void setTempoSimulacao(Double tempoSimulacao) {
+        this.tempoSimulacao = tempoSimulacao;
     }
 }

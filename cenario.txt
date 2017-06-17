@@ -46,7 +46,7 @@ N CHG 0.003333
 # Quantidade de gruas disponivel nos cais. Default = 3.
 G QTD 3
 
-# Tempo de Icamento da Grua, em minutos: N(xxx,xxx)
+# Tempo de Icamento da Grua, em minutos: T(xxx,xxx,xxx)
 G ICA 0.25 0.28 0.58
 
 # Tempo de Movimentar Container Cheio

@@ -3,7 +3,7 @@ package br.edu.ifmg.simulacao;
 /**
  * Classe que representa uma distribuição triângular na simulação.
  * */
-public class Triangular{
+public class Triangular extends Random{
 
     private Double a;
     private Double b;
@@ -37,5 +37,9 @@ public class Triangular{
 
     public void setC(Double c) {
         this.c = c;
+    }
+
+    public Double getRandomDistribuicao(){
+        return super.triangular(this.a, this.b, this.c);
     }
 }
