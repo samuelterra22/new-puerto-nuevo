@@ -18,6 +18,7 @@ public class Entidades {
     private int qtdRTG;
     private int qtdReachStacker;
     private int qtdTerminalCarga;
+
     private int qtdMinVagoesComposicao;
     private int qtdMaxVagoesComposicao;
 
@@ -25,6 +26,22 @@ public class Entidades {
 
 
     public Entidades() {    }
+
+    /*******************************************************************************************************************
+     * Geral
+     ******************************************************************************************************************/
+
+    public Double getTempoSimulacao() {
+        return tempoSimulacao;
+    }
+
+    public void setTempoSimulacao(Double tempoSimulacao) {
+        this.tempoSimulacao = tempoSimulacao;
+    }
+
+    /*******************************************************************************************************************
+     * Grua
+     ******************************************************************************************************************/
 
     public int getQtdGrua() {
         return qtdGrua;
@@ -34,6 +51,24 @@ public class Entidades {
         this.qtdGrua = qtdGrua;
     }
 
+    public void reservaGrua(){
+        if (this.qtdGrua > 0)
+            this.qtdGrua--;
+    }
+
+    public void liberaGrua(){
+        if (this.qtdGrua > 0)
+            this.qtdGrua++;
+    }
+
+    public Boolean gruaDisponivel(){
+        return qtdGrua > 0;
+    }
+
+    /*******************************************************************************************************************
+     * Equipe
+     ******************************************************************************************************************/
+
     public int getQtdEquipe() {
         return qtdEquipe;
     }
@@ -41,6 +76,24 @@ public class Entidades {
     public void setQtdEquipe(int qtdEquipe) {
         this.qtdEquipe = qtdEquipe;
     }
+
+    public void reservaEquipe(){
+        if (this.qtdEquipe > 0)
+            this.qtdEquipe--;
+    }
+
+    public void liberaEquipe(){
+        if (this.qtdEquipe > 0)
+            this.qtdEquipe++;
+    }
+
+    public Boolean equipeDisponivel(){
+        return qtdEquipe > 0;
+    }
+
+    /*******************************************************************************************************************
+     * Cais
+     ******************************************************************************************************************/
 
     public int getQtdCais() {
         return qtdCais;
@@ -50,6 +103,24 @@ public class Entidades {
         this.qtdCais = qtdCais;
     }
 
+    public void reservaCais(){
+        if (this.qtdCais > 0)
+            this.qtdCais--;
+    }
+
+    public void liberaCais(){
+        if (this.qtdCais > 0)
+            this.qtdCais++;
+    }
+
+    public Boolean caisDisponivel(){
+        return qtdCais > 0;
+    }
+
+    /*******************************************************************************************************************
+     * Carreta
+     ******************************************************************************************************************/
+
     public int getQtdCarreta() {
         return qtdCarreta;
     }
@@ -57,6 +128,24 @@ public class Entidades {
     public void setQtdCarreta(int qtdCarreta) {
         this.qtdCarreta = qtdCarreta;
     }
+
+    public void reservaCarreta(){
+        if (this.qtdCarreta > 0)
+            this.qtdCarreta--;
+    }
+
+    public void liberaCarreta(){
+        if (this.qtdCarreta > 0)
+            this.qtdCarreta++;
+    }
+
+    public Boolean carretaDisponivel(){
+        return qtdCarreta > 0;
+    }
+
+    /*******************************************************************************************************************
+     * RTG
+     ******************************************************************************************************************/
 
     public int getQtdRTG() {
         return qtdRTG;
@@ -66,6 +155,24 @@ public class Entidades {
         this.qtdRTG = qtdRTG;
     }
 
+    public void reservaRTG(){
+        if (this.qtdRTG > 0)
+            this.qtdRTG--;
+    }
+
+    public void liberaRTG(){
+        if (this.qtdRTG > 0)
+            this.qtdRTG++;
+    }
+
+    public Boolean rtgDisponivel(){
+        return qtdRTG > 0;
+    }
+
+    /*******************************************************************************************************************
+     * Reach Stacker
+     ******************************************************************************************************************/
+
     public int getQtdReachStacker() {
         return qtdReachStacker;
     }
@@ -74,6 +181,24 @@ public class Entidades {
         this.qtdReachStacker = qtdReachStacker;
     }
 
+    public void reservaReachStacker(){
+        if (this.qtdReachStacker > 0)
+            this.qtdReachStacker--;
+    }
+
+    public void liberaReachStacker(){
+        if (this.qtdReachStacker > 0)
+            this.qtdReachStacker++;
+    }
+
+    public Boolean reachStackerDisponivel(){
+        return qtdReachStacker > 0;
+    }
+
+    /*******************************************************************************************************************
+     * Terminal de carga - Composição ferroviaria
+     ******************************************************************************************************************/
+
     public int getQtdTerminalCarga() {
         return qtdTerminalCarga;
     }
@@ -81,6 +206,7 @@ public class Entidades {
     public void setQtdTerminalCarga(int qtdTerminalCarga) {
         this.qtdTerminalCarga = qtdTerminalCarga;
     }
+
 
     public int getQtdMinVagoesComposicao() {
         return qtdMinVagoesComposicao;
@@ -98,11 +224,17 @@ public class Entidades {
         this.qtdMaxVagoesComposicao = qtdMaxVagoesComposicao;
     }
 
-    public Double getTempoSimulacao() {
-        return tempoSimulacao;
+    public void reservaTerminalCarga(){
+        if (this.qtdTerminalCarga > 0)
+            this.qtdTerminalCarga--;
     }
 
-    public void setTempoSimulacao(Double tempoSimulacao) {
-        this.tempoSimulacao = tempoSimulacao;
+    public void liberaTerminalCarga(){
+        if (this.qtdTerminalCarga > 0)
+            this.qtdTerminalCarga++;
+    }
+
+    public Boolean terminalCargaDisponivel(){
+        return qtdTerminalCarga > 0;
     }
 }
