@@ -5,11 +5,11 @@ package br.edu.ifmg.simulacao;
  * */
 public class Entidades {
 
-    // qtd de cada entidade
-    // entidades disponiveis
-    // ocupa entidades
-    // libera entidades
-    // verifica disponivel
+    // qtd de cada entidade     ok
+    // entidades disponiveis    ok
+    // ocupa entidades          ok
+    // libera entidades         ok
+    // verifica disponivel      ok
 
     private int qtdGrua;
     private int qtdEquipe;

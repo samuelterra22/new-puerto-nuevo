@@ -12,8 +12,6 @@ public class Simulacao {
     Distribuicoes distribuicoes;
     Entidades entidades;
 
-    // filas
-
     public Simulacao() {
         this.distribuicoes = new Distribuicoes();
         this.entidades = new Entidades();
