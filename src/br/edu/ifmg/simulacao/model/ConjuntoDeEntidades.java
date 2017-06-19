@@ -15,12 +15,12 @@ public class ConjuntoDeEntidades {
         this.conjuntoDeEntidades = new HashMap<>();
     }
 
-    public void addCollection (String key, ColecaoDeEntidade collection){
+    public void adicionarColecao(String key, ColecaoDeEntidade collection){
         this.conjuntoDeEntidades.put(key,collection);
         
     }
 
-    public void addEntity(String key, Entidade entidade){
+    public void adicionarEntidade(String key, Entidade entidade){
 
         // verifica se existe a fila
         if (this.conjuntoDeEntidades.containsKey(key)){
@@ -32,20 +32,20 @@ public class ConjuntoDeEntidades {
         }
     }
 
-    public ColecaoDeEntidade getCollection (String key){
+    public ColecaoDeEntidade getColecao(String key){
         return this.conjuntoDeEntidades.get(key);
     }
-    public Entidade getEntity(String key, int i){
-        return this.getCollection(key).getEntity(i);
+    public Entidade getEntidade(String key, int i){
+        return this.getColecao(key).getEntity(i);
     }
 
-    public void destroyCollection(int i){
+    public void destroeColecao(int i){
         this.conjuntoDeEntidades.remove(i);
     }
-    public void destroyEntity(String key, int i){
-        this.getCollection(key).destroyEntity(i);
-    }
 
+    public void destreEntidade(String key, int i){
+        this.getColecao(key).destroyEntity(i);
+    }
 
     public void instanciaEntidades(String entidade, int quantidade){
         int i;
@@ -53,35 +53,35 @@ public class ConjuntoDeEntidades {
         for(i=0;i<quantidade;i++){
             switch (entidade.toUpperCase()){
                 case "G": {
-                    this.addEntity("G", new Grua());
+                    this.adicionarEntidade("G", new Grua());
                     break;
                 }
                 case "E": {
-                    this.addEntity("E", new Equipe());
+                    this.adicionarEntidade("E", new Equipe());
                     break;
                 }
                 case "Q": {
-                    this.addEntity("Q", new Cais());
+                    this.adicionarEntidade("Q", new Cais());
                     break;
                 }
                 case "C": {
-                    this.addEntity("C", new Carreta());
+                    this.adicionarEntidade("C", new Carreta());
                     break;
                 }
                 case "R": {
-                    this.addEntity("R", new RTG());
+                    this.adicionarEntidade("R", new RTG());
                     break;
                 }
                 case "S": {
-                    this.addEntity("S", new ReachStacker());
+                    this.adicionarEntidade("S", new ReachStacker());
                     break;
                 }
                 case "F": {
-                    this.addEntity("F", new TerminalDeCarga());
+                    this.adicionarEntidade("F", new TerminalDeCarga());
                     break;
                 }
                 case "T": {
-                    this.addEntity("T", new ComposicaoFerroviaria());
+                    this.adicionarEntidade("T", new ComposicaoFerroviaria());
                     break;
                 }
             }

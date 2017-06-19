@@ -9,14 +9,15 @@ import java.io.IOException;
 
 public class Entrada {
 
-    private Entidades entidades;
+    //private Entidades entidades;
     private Distribuicoes distribuicoes;
     private String path;
     private ConjuntoDeEntidades conjuntoDeEntidades;
 
     public Entrada(String path) {
-        this.entidades = new Entidades();
+        //this.entidades = new Entidades();
         this.distribuicoes = new Distribuicoes();
+        this.conjuntoDeEntidades = new ConjuntoDeEntidades();
         this.path = path;
 
         leArquivo();
@@ -25,14 +26,24 @@ public class Entrada {
     /*******************************************************************************************************************
      *  Entidades
      ******************************************************************************************************************/
-    public Entidades getEntidades() {
+    /*public Entidades getEntidades() {
         return entidades;
     }
 
     public void setEntidades(Entidades entidades) {
         this.entidades = entidades;
     }
+*/
+    /*******************************************************************************************************************
+     *  Conjunto de entidades
+     ******************************************************************************************************************/
+    public ConjuntoDeEntidades getConjuntoDeEntidades() {
+        return conjuntoDeEntidades;
+    }
 
+    public void setConjuntoDeEntidades(ConjuntoDeEntidades conjuntoDeEntidades) {
+        this.conjuntoDeEntidades = conjuntoDeEntidades;
+    }
     /*******************************************************************************************************************
      *  Distribuicoes
      ******************************************************************************************************************/
@@ -81,8 +92,8 @@ public class Entrada {
                                 case "QTD": {
                                     // Quantidade de gruas disponivel nos cais. Default = 3
                                     //System.out.println("Quantidade de gruas: "+resultSplit[2]);
-                                    this.entidades.setQtdGrua(Integer.parseInt(resultSplit[2]));
-
+                                    //this.entidades.setQtdGrua(Integer.parseInt(resultSplit[2]));
+                                    this.conjuntoDeEntidades.instanciaEntidades(linhaEntidade, Integer.parseInt(resultSplit[2]));
 
                                     break;
                                 }
@@ -145,7 +156,8 @@ public class Entrada {
                                 case "QTD": {
                                     // Quantidade de equipes disponiveis para atracar/desatracar
                                     //System.out.println("Quantidade de equipes:"+ resultSplit[2]);
-                                    this.entidades.setQtdEquipe(Integer.parseInt(resultSplit[2]));
+                                    //this.entidades.setQtdEquipe(Integer.parseInt(resultSplit[2]));
+                                    this.conjuntoDeEntidades.instanciaEntidades(linhaEntidade, Integer.parseInt(resultSplit[2]));
                                     break;
                                 }
                                 case "ATR": {
@@ -181,7 +193,8 @@ public class Entrada {
                                 case "QTD": {
                                     // Inspirado nos cais das Darsenas de Puerto Nuevo
                                     //System.out.println("Quantidade de cais:"+ resultSplit[2]);
-                                    this.entidades.setQtdCais(Integer.parseInt(resultSplit[2]));
+                                    //this.entidades.setQtdCais(Integer.parseInt(resultSplit[2]));
+                                    this.conjuntoDeEntidades.instanciaEntidades(linhaEntidade, Integer.parseInt(resultSplit[2]));
                                     break;
                                 }
                                 default: {
@@ -198,7 +211,8 @@ public class Entrada {
                                 case "QTD": {
                                     // Quantidade de carretas disponiveis para operar entre cais e patio
                                     //System.out.println("Quantidade de carretas:"+ resultSplit[2]);
-                                    this.entidades.setQtdCarreta(Integer.parseInt(resultSplit[2]));
+                                    //this.entidades.setQtdCarreta(Integer.parseInt(resultSplit[2]));
+                                    this.conjuntoDeEntidades.instanciaEntidades(linhaEntidade, Integer.parseInt(resultSplit[2]));
                                     break;
                                 }
                                 case "MVZ": {
@@ -233,7 +247,8 @@ public class Entrada {
                                 case "QTD": {
                                     // Quantidade de RTGs disponiveis no patio
                                     //System.out.println("Quantidade de RTGs:" + resultSplit[2]);
-                                    this.entidades.setQtdRTG(Integer.parseInt(resultSplit[2]));
+                                    //this.entidades.setQtdRTG(Integer.parseInt(resultSplit[2]));
+                                    this.conjuntoDeEntidades.instanciaEntidades(linhaEntidade, Integer.parseInt(resultSplit[2]));
                                     break;
                                 }
                                 case "DCG": {
@@ -277,7 +292,8 @@ public class Entrada {
                                 case "QTD": {
                                     // Quantidade de reach stackers no patio
                                     //System.out.println("Quantidade de Reach Stacker:" + resultSplit[2]);
-                                    this.entidades.setQtdReachStacker(Integer.parseInt(resultSplit[2]));
+                                    //this.entidades.setQtdReachStacker(Integer.parseInt(resultSplit[2]));
+                                    this.conjuntoDeEntidades.instanciaEntidades(linhaEntidade, Integer.parseInt(resultSplit[2]));
                                     break;
                                 }
                                 case "DCG": {
@@ -358,7 +374,8 @@ public class Entrada {
                                 case "QTD": {
                                     // Quantidade de terminais de carga
                                     //System.out.println("Quantidade de terminais de carga:" + resultSplit[2]);
-                                    this.entidades.setQtdTerminalCarga(Integer.parseInt(resultSplit[2]));
+                                    //this.entidades.setQtdTerminalCarga(Integer.parseInt(resultSplit[2]));
+                                    this.conjuntoDeEntidades.instanciaEntidades(linhaEntidade, Integer.parseInt(resultSplit[2]));
                                     break;
                                 }
                                 default: {
