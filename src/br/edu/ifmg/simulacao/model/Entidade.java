@@ -19,33 +19,15 @@ public class Entidade {
         this.status = status;
     }
 
-    public Boolean isFree(){
+    public Boolean isLivre(){
         return getStatus();
     }
 
-    public void lock(){
+    public void reserva(){
         this.status = false;
     }
 
-    public void unlock(){
+    public void libera(){
         this.status = true;
-    }
-
-
-
-    public void setVariable(String variable, Double value){
-        this.variables.put(variable, value);
-    }
-
-    public void incrementVariable(String variable, Double value){
-        this.variables.put(variable, this.variables.get(variable)+value);
-    }
-
-    public Double getVariable(String variable){
-        if (this.variables.containsKey(variable)){
-            return this.variables.get(variable);
-        }
-
-        return null;
     }
 }

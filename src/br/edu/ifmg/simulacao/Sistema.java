@@ -1,10 +1,11 @@
 package br.edu.ifmg.simulacao;
 
 import br.edu.ifmg.simulacao.model.ConjuntoDeEntidades;
+import br.edu.ifmg.simulacao.model.ConjuntoDeFilasDoSistema;
 
 /**
  * Classe que contem todas as variaveis do sistema para realizar a simulação.
- * */
+ */
 public class Sistema {
 
     // Distribuições obetidas apartir do arquivo de entrada
@@ -15,7 +16,10 @@ public class Sistema {
     private Integer T_MIN;
     // Quantidade maxima de vagoes na composicao
     private Integer T_MAX;
+    // Tempo da simulação
     private Double tempoDeSimulacao;
+    // Conjunto de filas do sistema
+    private ConjuntoDeFilasDoSistema filasDoSistema;
 
     public Sistema() {
         this.distribuicoes = new Distribuicoes();
@@ -75,5 +79,17 @@ public class Sistema {
 
     public void setTempoDeSimulacao(Double tempoDeSimulacao) {
         this.tempoDeSimulacao = tempoDeSimulacao;
+    }
+
+
+    /*******************************************************************************************************************
+     * Conjunto de filas do sistema
+     ******************************************************************************************************************/
+    public ConjuntoDeFilasDoSistema getFilasDoSistema() {
+        return filasDoSistema;
+    }
+
+    public void setFilasDoSistema(ConjuntoDeFilasDoSistema filasDoSistema) {
+        this.filasDoSistema = filasDoSistema;
     }
 }

@@ -24,7 +24,7 @@ public class ConjuntoDeFilasDoSistema {
     }
 
     // adiciona a entidade em determinada fila, se a entidade nao existir, create uma nova
-    public void addEntity(String fila, Entidade entidade){
+    public void addEntidade(String fila, Entidade entidade){
 
         // verifica se existe a fila
         if (this.filaDeEntidades.containsKey(fila)){
@@ -48,4 +48,5 @@ public class ConjuntoDeFilasDoSistema {
     public FilaDeEntidades getFilaDeEntidades(String fila){
         return this.filaDeEntidades.get(fila);
     }
+
 }

@@ -87,4 +87,8 @@ public class FilaDeEntidades {
     public boolean disponivel() {
         return this.listaDeEntidades.size() > 0;
     }
+
+    public int getSize(){
+        return listaDeEntidades.size();
+    }
 }
