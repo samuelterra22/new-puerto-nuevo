@@ -17,4 +17,5 @@ public class Simulacao {
         this.entidades = new Entidades();
     }
 
+
 }
