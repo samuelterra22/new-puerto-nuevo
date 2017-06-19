@@ -1,7 +1,7 @@
 package br.edu.ifmg.simulacao.model.navios;
 
 /**
- * Created by samuel on 13/03/17.
+ * Entidade navio do tipo Feeder
  */
 public class Feeder extends Navio {
 

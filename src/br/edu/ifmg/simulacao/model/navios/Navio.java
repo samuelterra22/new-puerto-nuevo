@@ -1,5 +1,8 @@
 package br.edu.ifmg.simulacao.model.navios;
 
+/**
+ * Classe abstrata que implementa os metodos do navio
+ */
 public abstract class Navio {
 
     private String nome;
