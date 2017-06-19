@@ -11,6 +11,9 @@ import java.util.Map;
  */
 
 public class ConjuntoDeFilasDoSistema {
+    private static int LISTA = 0;
+    private static int FILA = 1;
+    private static int PILHA = 2;
 
     // hash table que representa o conjunto de filas
     private Map<String, FilaDeEntidades> filaDeEntidades;
@@ -28,7 +31,7 @@ public class ConjuntoDeFilasDoSistema {
             this.filaDeEntidades.get(fila).addEntity(entidade);
         }else{
             // adciona uma fila nova e ja adiciona a entidade
-            this.filaDeEntidades.put(fila, new FilaDeEntidades(FilaDeEntidades.FILA));
+            this.filaDeEntidades.put(fila, new FilaDeEntidades(FILA));
             this.filaDeEntidades.get(fila).addEntity(entidade);
         }
     }

@@ -19,7 +19,7 @@ public class FilaDeEntidades {
     private List<Entidade> listaDeEntidades;
 
     public FilaDeEntidades() {
-        this.politica = this.LISTA;
+        this.politica = LISTA;
         this.listaDeEntidades = new ArrayList<>();
     }
 
@@ -33,13 +33,13 @@ public class FilaDeEntidades {
     }
 
     public void addEntity(int i, Entidade Entidade) {
-        if (this.politica == this.LISTA) {
+        if (this.politica == LISTA) {
             this.listaDeEntidades.add(i, Entidade);
         }
     }
 
     public Entidade getEntidade() { // rever o nome do metodo
-        if (this.politica == this.PILHA) {
+        if (this.politica == PILHA) {
             return this.desempilha();
         } else {
             return this.tiraDaFila();
@@ -47,7 +47,7 @@ public class FilaDeEntidades {
     }
 
     public Entidade getEntidade(int i) {
-        if (this.politica == this.LISTA) {
+        if (this.politica == LISTA) {
             if (this.listaDeEntidades.size() >= i) {
                 Entidade Entidade = this.listaDeEntidades.get(i);
                 this.listaDeEntidades.remove(i);
@@ -55,9 +55,9 @@ public class FilaDeEntidades {
             } else {
                 return null;
             }
-        } else if (this.politica == this.FILA) {
+        } else if (this.politica == FILA) {
             return this.tiraDaFila();
-        } else if (this.politica == this.PILHA) {
+        } else if (this.politica == PILHA) {
             return this.desempilha();
         }
         return null;
