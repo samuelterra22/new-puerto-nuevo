@@ -3,50 +3,46 @@ package br.edu.ifmg.simulacao.model;
 import java.util.HashMap;
 import java.util.Map;
 
-import entities.Entity;
-
 /**
- ConjuntoDeFilasDoSistema is an abstraction model for a set
- of all system's queues
+ ConjuntoDeFilasDoSistema é um modelo de abstração para um conjunto de todas as filas do sistema
 
- Each queue is an especial form of an FilaDeEntidades
- itens are acessed in a FIFO policy
+ Cada fila é uma forma especial de uma filaDeEntidades, oss itens são acessados em uma política FIFO
 
  */
 
 public class ConjuntoDeFilasDoSistema {
 
     // hash table que representa o conjunto de filas
-    private Map<String, FilaDeEntidades> entityQueue;
+    private Map<String, FilaDeEntidades> filaDeEntidades;
 
     // contrutor
     public ConjuntoDeFilasDoSistema(){
-        this.entityQueue = new HashMap<>();
+        this.filaDeEntidades = new HashMap<String, FilaDeEntidades>();
     }
 
     // adiciona a entidade em determinada fila, se a entidade nao existir, create uma nova
-    public void addEntity(String queue, Entity entity){
+    public void addEntity(String fila, Entidade entidade){
 
         // verifica se existe a fila
-        if (this.entityQueue.containsKey(queue)){
-            this.entityQueue.get(queue).addEntity(entity);
+        if (this.filaDeEntidades.containsKey(fila)){
+            this.filaDeEntidades.get(fila).addEntity(entidade);
         }else{
-            // adciona uma fila nova e ja adiciona a entity
-            this.entityQueue.put(queue, new FilaDeEntidades(FilaDeEntidades.FILA));
-            this.entityQueue.get(queue).addEntity(entity);
+            // adciona uma fila nova e ja adiciona a entidade
+            this.filaDeEntidades.put(fila, new FilaDeEntidades(FilaDeEntidades.FILA));
+            this.filaDeEntidades.get(fila).addEntity(entidade);
         }
     }
 
     // retorna uma entidade da frente da fila de determinada tipo de entidade (ex. navio, equipe)
-    public Entity getEntity(String queue){
-        if (this.entityQueue.containsKey(queue)){
-            return this.entityQueue.get(queue).getEntity();
+    public Entidade getEntidade(String fila){
+        if (this.filaDeEntidades.containsKey(fila)){
+            return this.filaDeEntidades.get(fila).getEntidade();
         }
         return null;
     }
 
     // retorna uma lista de entidades
-    public FilaDeEntidades getEntityQueue(String queue){
-        return this.entityQueue.get(queue);
+    public FilaDeEntidades getFilaDeEntidades(String fila){
+        return this.filaDeEntidades.get(fila);
     }
 }
