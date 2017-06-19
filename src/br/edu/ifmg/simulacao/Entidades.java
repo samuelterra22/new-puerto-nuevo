@@ -1,14 +1,14 @@
 package br.edu.ifmg.simulacao;
 
 /**
- * Classe que guarda todas as informações sobre as entidades do sistema.
+ * Classe que guarda todas as informações sobre as conjuntoDeEntidades do sistema.
  * */
 public class Entidades {
 
     // qtd de cada entidade     ok
-    // entidades disponiveis    ok
-    // ocupa entidades          ok
-    // libera entidades         ok
+    // conjuntoDeEntidades disponiveis    ok
+    // ocupa conjuntoDeEntidades          ok
+    // libera conjuntoDeEntidades         ok
     // verifica disponivel      ok
 
     private int qtdGrua;

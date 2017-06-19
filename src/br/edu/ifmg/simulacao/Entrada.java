@@ -9,33 +9,22 @@ import java.io.IOException;
 
 public class Entrada {
 
-    //private Entidades entidades;
+    //private Entidades conjuntoDeEntidades;
     private Distribuicoes distribuicoes;
     private String path;
     private ConjuntoDeEntidades conjuntoDeEntidades;
+    private Sistema sistema;
 
     public Entrada(String path) {
-        //this.entidades = new Entidades();
+        //this.conjuntoDeEntidades = new Entidades();
         this.distribuicoes = new Distribuicoes();
         this.conjuntoDeEntidades = new ConjuntoDeEntidades();
+        this.sistema = new Sistema();
         this.path = path;
-
-        leArquivo();
     }
 
     /*******************************************************************************************************************
-     *  Entidades
-     ******************************************************************************************************************/
-    /*public Entidades getEntidades() {
-        return entidades;
-    }
-
-    public void setEntidades(Entidades entidades) {
-        this.entidades = entidades;
-    }
-*/
-    /*******************************************************************************************************************
-     *  Conjunto de entidades
+     *  Conjunto de Entidades
      ******************************************************************************************************************/
     public ConjuntoDeEntidades getConjuntoDeEntidades() {
         return conjuntoDeEntidades;
@@ -58,7 +47,7 @@ public class Entrada {
     /*******************************************************************************************************************
      *  Distribuicoes
      ******************************************************************************************************************/
-    private void leArquivo() {
+    public Sistema leArquivo() {
         //System.out.printf("\nConteúdo do arquivo texto:\n");
         try {
             FileReader arq = new FileReader(this.path);
@@ -82,7 +71,8 @@ public class Entrada {
                             String resultSplit[] = linha.split(" ");
                             // pega o tempo de simulação
                             //System.out.println("tempo de simulacao: "+resultSplit[2]);
-                            this.entidades.setTempoSimulacao(Double.parseDouble(resultSplit[2]));
+                            //this.entidades.setTempoSimulacao(Double.parseDouble(resultSplit[2]));
+                            this.sistema.setTempoDeSimulacao(Double.parseDouble(resultSplit[2]));
                             break;
                         }
                         case "G": {
@@ -92,7 +82,7 @@ public class Entrada {
                                 case "QTD": {
                                     // Quantidade de gruas disponivel nos cais. Default = 3
                                     //System.out.println("Quantidade de gruas: "+resultSplit[2]);
-                                    //this.entidades.setQtdGrua(Integer.parseInt(resultSplit[2]));
+                                    //this.conjuntoDeEntidades.setQtdGrua(Integer.parseInt(resultSplit[2]));
                                     this.conjuntoDeEntidades.instanciaEntidades(linhaEntidade, Integer.parseInt(resultSplit[2]));
 
                                     break;
@@ -156,7 +146,7 @@ public class Entrada {
                                 case "QTD": {
                                     // Quantidade de equipes disponiveis para atracar/desatracar
                                     //System.out.println("Quantidade de equipes:"+ resultSplit[2]);
-                                    //this.entidades.setQtdEquipe(Integer.parseInt(resultSplit[2]));
+                                    //this.conjuntoDeEntidades.setQtdEquipe(Integer.parseInt(resultSplit[2]));
                                     this.conjuntoDeEntidades.instanciaEntidades(linhaEntidade, Integer.parseInt(resultSplit[2]));
                                     break;
                                 }
@@ -193,7 +183,7 @@ public class Entrada {
                                 case "QTD": {
                                     // Inspirado nos cais das Darsenas de Puerto Nuevo
                                     //System.out.println("Quantidade de cais:"+ resultSplit[2]);
-                                    //this.entidades.setQtdCais(Integer.parseInt(resultSplit[2]));
+                                    //this.conjuntoDeEntidades.setQtdCais(Integer.parseInt(resultSplit[2]));
                                     this.conjuntoDeEntidades.instanciaEntidades(linhaEntidade, Integer.parseInt(resultSplit[2]));
                                     break;
                                 }
@@ -211,7 +201,7 @@ public class Entrada {
                                 case "QTD": {
                                     // Quantidade de carretas disponiveis para operar entre cais e patio
                                     //System.out.println("Quantidade de carretas:"+ resultSplit[2]);
-                                    //this.entidades.setQtdCarreta(Integer.parseInt(resultSplit[2]));
+                                    //this.conjuntoDeEntidades.setQtdCarreta(Integer.parseInt(resultSplit[2]));
                                     this.conjuntoDeEntidades.instanciaEntidades(linhaEntidade, Integer.parseInt(resultSplit[2]));
                                     break;
                                 }
@@ -247,7 +237,7 @@ public class Entrada {
                                 case "QTD": {
                                     // Quantidade de RTGs disponiveis no patio
                                     //System.out.println("Quantidade de RTGs:" + resultSplit[2]);
-                                    //this.entidades.setQtdRTG(Integer.parseInt(resultSplit[2]));
+                                    //this.conjuntoDeEntidades.setQtdRTG(Integer.parseInt(resultSplit[2]));
                                     this.conjuntoDeEntidades.instanciaEntidades(linhaEntidade, Integer.parseInt(resultSplit[2]));
                                     break;
                                 }
@@ -292,7 +282,7 @@ public class Entrada {
                                 case "QTD": {
                                     // Quantidade de reach stackers no patio
                                     //System.out.println("Quantidade de Reach Stacker:" + resultSplit[2]);
-                                    //this.entidades.setQtdReachStacker(Integer.parseInt(resultSplit[2]));
+                                    //this.conjuntoDeEntidades.setQtdReachStacker(Integer.parseInt(resultSplit[2]));
                                     this.conjuntoDeEntidades.instanciaEntidades(linhaEntidade, Integer.parseInt(resultSplit[2]));
                                     break;
                                 }
@@ -374,7 +364,7 @@ public class Entrada {
                                 case "QTD": {
                                     // Quantidade de terminais de carga
                                     //System.out.println("Quantidade de terminais de carga:" + resultSplit[2]);
-                                    //this.entidades.setQtdTerminalCarga(Integer.parseInt(resultSplit[2]));
+                                    //this.conjuntoDeEntidades.setQtdTerminalCarga(Integer.parseInt(resultSplit[2]));
                                     this.conjuntoDeEntidades.instanciaEntidades(linhaEntidade, Integer.parseInt(resultSplit[2]));
                                     break;
                                 }
@@ -392,13 +382,15 @@ public class Entrada {
                                 case "MIN": {
                                     // Quantidade minima de vagoes na composicao
                                     //System.out.println("Quantidade minima de vagoes:" + resultSplit[2]);
-                                    this.entidades.setQtdMinVagoesComposicao(Integer.parseInt(resultSplit[2]));
+                                    //this.entidades.setQtdMinVagoesComposicao(Integer.parseInt(resultSplit[2]));
+                                    this.sistema.setT_MIN(Integer.parseInt(resultSplit[2]));
                                     break;
                                 }
                                 case "MAX": {
                                     // Quantidade maxima de vagoes na composicao
                                     //System.out.println("Quantidade maxima de vagoes:"+ resultSplit[2]);
-                                    this.entidades.setQtdMaxVagoesComposicao(Integer.parseInt(resultSplit[2]));
+                                    //this.entidades.setQtdMaxVagoesComposicao(Integer.parseInt(resultSplit[2]));
+                                    this.sistema.setT_MAX(Integer.parseInt(resultSplit[2]));
                                     break;
                                 }
                                 case "CHG": {
@@ -448,6 +440,11 @@ public class Entrada {
             System.err.printf("Erro na abertura do arquivo: %s.\n", e.getMessage());
             System.err.printf("Diretório de leitura: %s.\n", System.getProperty("user.dir"));
         }
+
+        // retorna o sistema montado
+        this.sistema.setConjuntoDeEntidades(this.conjuntoDeEntidades);
+        this.sistema.setDistribuicoes(this.distribuicoes);
+        return this.sistema;
     }
 
 }
