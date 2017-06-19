@@ -2,13 +2,18 @@ package br.edu.ifmg.simulacao;
 
 import br.edu.ifmg.simulacao.model.ConjuntoDeEntidades;
 
+/**
+ * Classe que contem todas as variaveis do sistema para realizar a simulação.
+ * */
 public class Sistema {
 
+    // Distribuições obetidas apartir do arquivo de entrada
     private Distribuicoes distribuicoes;
+    // Conjunto de entidades
     private ConjuntoDeEntidades conjuntoDeEntidades;
-    //  Quantidade minima de vagoes na composicao
+    // Quantidade minima de vagoes na composicao
     private Integer T_MIN;
-    //Quantidade maxima de vagoes na composicao
+    // Quantidade maxima de vagoes na composicao
     private Integer T_MAX;
     private Double tempoDeSimulacao;
 
@@ -17,6 +22,9 @@ public class Sistema {
         this.conjuntoDeEntidades = new ConjuntoDeEntidades();
     }
 
+    /*******************************************************************************************************************
+     * Distribuições
+     ******************************************************************************************************************/
     public Distribuicoes getDistribuicoes() {
         return distribuicoes;
     }
@@ -25,6 +33,9 @@ public class Sistema {
         this.distribuicoes = distribuicoes;
     }
 
+    /*******************************************************************************************************************
+     * Conjuntos de entidades
+     ******************************************************************************************************************/
     public ConjuntoDeEntidades getConjuntoDeEntidades() {
         return conjuntoDeEntidades;
     }
@@ -33,6 +44,9 @@ public class Sistema {
         this.conjuntoDeEntidades = conjuntoDeEntidades;
     }
 
+    /*******************************************************************************************************************
+     * Quantidade minima de vagoes na composição
+     ******************************************************************************************************************/
     public Integer getT_MIN() {
         return T_MIN;
     }
@@ -41,6 +55,9 @@ public class Sistema {
         T_MIN = t_MIN;
     }
 
+    /*******************************************************************************************************************
+     * Quantidade maxima de vagoes na composição
+     ******************************************************************************************************************/
     public Integer getT_MAX() {
         return T_MAX;
     }
@@ -49,6 +66,9 @@ public class Sistema {
         T_MAX = t_MAX;
     }
 
+    /*******************************************************************************************************************
+     * Tempo de simulação
+     ******************************************************************************************************************/
     public Double getTempoDeSimulacao() {
         return tempoDeSimulacao;
     }

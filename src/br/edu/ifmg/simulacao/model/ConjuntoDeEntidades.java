@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- ConjuntoDeEntidades is a class to group all system's entities
- in a set of entities collections
+ ConjuntoDeEntidades é uma classe para agrupar todas as entidades do sistema em um
+ conjunto de coleções de entidades
  */
 
 public class ConjuntoDeEntidades {
@@ -15,36 +15,38 @@ public class ConjuntoDeEntidades {
         this.conjuntoDeEntidades = new HashMap<>();
     }
 
-    public void adicionarColecao(String key, ColecaoDeEntidade collection){
-        this.conjuntoDeEntidades.put(key,collection);
+    public void adicionarColecao(String chave, ColecaoDeEntidade collection){
+        this.conjuntoDeEntidades.put(chave, collection);
         
     }
 
-    public void adicionarEntidade(String key, Entidade entidade){
+    // adiciona entidade no hash
+    public void adicionarEntidade(String chave, Entidade entidade){
 
         // verifica se existe a fila
-        if (this.conjuntoDeEntidades.containsKey(key)){
-            this.conjuntoDeEntidades.get(key).addEntity(entidade);
+        if (this.conjuntoDeEntidades.containsKey(chave)){
+            this.conjuntoDeEntidades.get(chave).addEntity(entidade);
         }else{
             // adciona uma fila nova e ja adiciona a entidade
-            this.conjuntoDeEntidades.put(key, new ColecaoDeEntidade());
-            this.conjuntoDeEntidades.get(key).addEntity(entidade);
+            this.conjuntoDeEntidades.put(chave, new ColecaoDeEntidade());
+            this.conjuntoDeEntidades.get(chave).addEntity(entidade);
         }
     }
 
-    public ColecaoDeEntidade getColecao(String key){
-        return this.conjuntoDeEntidades.get(key);
+    public ColecaoDeEntidade getColecao(String chave){
+        return this.conjuntoDeEntidades.get(chave);
     }
-    public Entidade getEntidade(String key, int i){
-        return this.getColecao(key).getEntity(i);
+    public Entidade getEntidade(String chave, int i){
+        return this.getColecao(chave).getEntity(i);
     }
 
+    // remove uma coleção inteira de entidades
     public void destroeColecao(int i){
         this.conjuntoDeEntidades.remove(i);
     }
 
-    public void destreEntidade(String key, int i){
-        this.getColecao(key).destroyEntity(i);
+    public void destreEntidade(String chave, int i){
+        this.getColecao(chave).destroyEntity(i);
     }
 
     public void instanciaEntidades(String entidade, int quantidade){
