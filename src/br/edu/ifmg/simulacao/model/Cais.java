@@ -1,6 +1,6 @@
 package br.edu.ifmg.simulacao.model;
 
 
-public class Cais {
+public class Cais extends Entidade{
 
 }

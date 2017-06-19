@@ -1,7 +1,7 @@
 package br.edu.ifmg.simulacao.model;
 
 
-public class Carreta {
+public class Carreta extends Entidade{
 
 
 }

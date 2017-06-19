@@ -1,6 +1,8 @@
 package br.edu.ifmg.simulacao;
 
 
+import br.edu.ifmg.simulacao.model.ConjuntoDeEntidades;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,6 +12,7 @@ public class Entrada {
     private Entidades entidades;
     private Distribuicoes distribuicoes;
     private String path;
+    private ConjuntoDeEntidades conjuntoDeEntidades;
 
     public Entrada(String path) {
         this.entidades = new Entidades();
@@ -79,6 +82,8 @@ public class Entrada {
                                     // Quantidade de gruas disponivel nos cais. Default = 3
                                     //System.out.println("Quantidade de gruas: "+resultSplit[2]);
                                     this.entidades.setQtdGrua(Integer.parseInt(resultSplit[2]));
+
+
                                     break;
                                 }
                                 case "ICA": {

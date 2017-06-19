@@ -12,9 +12,11 @@ public class Simulacao {
     Distribuicoes distribuicoes;
     Entidades entidades;
 
+
     public Simulacao() {
         this.distribuicoes = new Distribuicoes();
         this.entidades = new Entidades();
+
     }
 
 

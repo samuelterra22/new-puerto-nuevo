@@ -45,4 +45,46 @@ public class ConjuntoDeEntidades {
     public void destroyEntity(String key, int i){
         this.getCollection(key).destroyEntity(i);
     }
+
+
+    public void instanciaEntidades(String entidade, int quantidade){
+        int i;
+
+        for(i=0;i<quantidade;i++){
+            switch (entidade.toUpperCase()){
+                case "G": {
+                    this.addEntity("G", new Grua());
+                    break;
+                }
+                case "E": {
+                    this.addEntity("E", new Equipe());
+                    break;
+                }
+                case "Q": {
+                    this.addEntity("Q", new Cais());
+                    break;
+                }
+                case "C": {
+                    this.addEntity("C", new Carreta());
+                    break;
+                }
+                case "R": {
+                    this.addEntity("R", new RTG());
+                    break;
+                }
+                case "S": {
+                    this.addEntity("S", new ReachStacker());
+                    break;
+                }
+                case "F": {
+                    this.addEntity("F", new TerminalDeCarga());
+                    break;
+                }
+                case "T": {
+                    this.addEntity("T", new ComposicaoFerroviaria());
+                    break;
+                }
+            }
+        }
+    }
 }
