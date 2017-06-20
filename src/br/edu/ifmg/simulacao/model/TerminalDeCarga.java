@@ -1,8 +1,11 @@
 package br.edu.ifmg.simulacao.model;
 
 /**
- * Entidade Grua
+ * Entidade TerminalDeCarga
  * */
 public class TerminalDeCarga extends Entidade{
 
+    public TerminalDeCarga() {
+        super();
+    }
 }

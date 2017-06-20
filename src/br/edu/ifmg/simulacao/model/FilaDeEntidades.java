@@ -28,6 +28,7 @@ public class FilaDeEntidades {
         this.listaDeEntidades = new ArrayList<>();
     }
 
+    // metodo para adicionar entidade na lista de entidades
     public void addEntity(Entidade entidade) {
         this.listaDeEntidades.add(entidade);
     }
@@ -38,7 +39,8 @@ public class FilaDeEntidades {
         }
     }
 
-    public Entidade getEntidade() { // rever o nome do metodo
+    // metodo que indiferente do tipo de politica, retira da estrutura e retorna o objeto
+    public Entidade getEntidade() {
         if (this.politica == PILHA) {
             return this.desempilha();
         } else {
@@ -46,6 +48,7 @@ public class FilaDeEntidades {
         }
     }
 
+    // metodo que indiferente do tipo de politica, retira da estrutura e retorna o objeto desejado
     public Entidade getEntidade(int i) {
         if (this.politica == LISTA) {
             if (this.listaDeEntidades.size() >= i) {
@@ -63,16 +66,18 @@ public class FilaDeEntidades {
         return null;
     }
 
+    // metodo que retira da fila e retorna a entidade
     private Entidade tiraDaFila() {
         if (this.listaDeEntidades.size() > 0) {
-            Entidade Entidade = this.listaDeEntidades.get(0);
+            Entidade entidade = this.listaDeEntidades.get(0);
             this.listaDeEntidades.remove(0);
-            return Entidade;
+            return entidade;
         } else {
             return null;
         }
     }
 
+    // metodo que desempilha e retorna o objeto
     private Entidade desempilha() {
         if (this.listaDeEntidades.size() > 0) {
             Entidade Entidade = this.listaDeEntidades.get(this.listaDeEntidades.size() - 1);
@@ -88,6 +93,7 @@ public class FilaDeEntidades {
         return this.listaDeEntidades.size() > 0;
     }
 
+    // retorna o tamanho da lista de entidades
     public int getSize(){
         return listaDeEntidades.size();
     }

@@ -5,7 +5,6 @@ import java.util.Map;
 
 /**
  ConjuntoDeFilasDoSistema é um modelo de abstração para um conjunto de todas as filas do sistema
-
  Cada fila é uma forma especial de uma filaDeEntidades, oss itens são acessados em uma política FIFO
 
  */

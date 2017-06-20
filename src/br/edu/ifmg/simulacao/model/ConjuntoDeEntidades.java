@@ -15,8 +15,8 @@ public class ConjuntoDeEntidades {
         this.conjuntoDeEntidades = new HashMap<>();
     }
 
-    public void adicionarColecao(String chave, ColecaoDeEntidade collection){
-        this.conjuntoDeEntidades.put(chave, collection);
+    public void adicionarColecao(String chave, ColecaoDeEntidade colecao){
+        this.conjuntoDeEntidades.put(chave, colecao);
         
     }
 
@@ -25,11 +25,11 @@ public class ConjuntoDeEntidades {
 
         // verifica se existe a fila
         if (this.conjuntoDeEntidades.containsKey(chave)){
-            this.conjuntoDeEntidades.get(chave).addEntity(entidade);
+            this.conjuntoDeEntidades.get(chave).addEntidade(entidade);
         }else{
             // adciona uma fila nova e ja adiciona a entidade
             this.conjuntoDeEntidades.put(chave, new ColecaoDeEntidade());
-            this.conjuntoDeEntidades.get(chave).addEntity(entidade);
+            this.conjuntoDeEntidades.get(chave).addEntidade(entidade);
         }
     }
 
@@ -37,7 +37,7 @@ public class ConjuntoDeEntidades {
         return this.conjuntoDeEntidades.get(chave);
     }
     public Entidade getEntidade(String chave, int i){
-        return this.getColecao(chave).getEntity(i);
+        return this.getColecao(chave).getEntidade(i);
     }
 
     // remove uma coleção inteira de entidades
@@ -46,7 +46,7 @@ public class ConjuntoDeEntidades {
     }
 
     public void destreEntidade(String chave, int i){
-        this.getColecao(chave).destroyEntity(i);
+        this.getColecao(chave).destroeEntidade(i);
     }
 
     public void instanciaEntidades(String entidade, int quantidade){

@@ -11,14 +11,17 @@ public class Exponencial extends Random{
         this.lambda = lambda;
     }
 
+    // obtem o valor de lambda
     public Double getLambda() {
         return lambda;
     }
 
+    // seta o valor de lambda
     public void setLambda(Double lambda) {
         this.lambda = lambda;
     }
 
+    // retorna o valor de acordo com a distribuição
     public Double getRandomDistribuicao(){
         return super.exponential(this.lambda);
     }

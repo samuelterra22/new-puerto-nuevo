@@ -1,8 +1,11 @@
 package br.edu.ifmg.simulacao.model;
 
 /**
- * Entidade Grua
+ * Entidade ReachStacker
  * */
 public class ReachStacker extends Entidade{
 
+    public ReachStacker() {
+        super();
+    }
 }
