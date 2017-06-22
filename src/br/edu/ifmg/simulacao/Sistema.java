@@ -1,7 +1,6 @@
 package br.edu.ifmg.simulacao;
 
-import br.edu.ifmg.simulacao.model.ConjuntoDeEntidades;
-import br.edu.ifmg.simulacao.model.ConjuntoDeFilasDoSistema;
+import br.edu.ifmg.simulacao.model.*;
 
 /**
  * Classe que contem todas as variaveis do sistema para realizar a simulação.
@@ -91,5 +90,71 @@ public class Sistema {
 
     public void setFilasDoSistema(ConjuntoDeFilasDoSistema filasDoSistema) {
         this.filasDoSistema = filasDoSistema;
+    }
+
+    /*******************************************************************************************************************
+     * Manipulação das Entidades do Sistema
+     ******************************************************************************************************************/
+    // grua
+    public boolean temGruaDisponivel(){
+        return this.conjuntoDeEntidades.gruaDisponivel();
+    }
+
+    public Grua getGruaDisponivel(){
+        return this.conjuntoDeEntidades.getGruaDisponivel();
+    }
+
+    // equipe
+    public boolean temEquipeDisponivel(){
+        return this.conjuntoDeEntidades.equipeDisponivel();
+    }
+
+    public Equipe getEquipeDisponivel(){
+        return this.conjuntoDeEntidades.getEquipeDisponivel();
+    }
+
+    // cais
+    public boolean temCaisDisponivel(){
+        return this.conjuntoDeEntidades.caisDisponivel();
+    }
+
+    public Cais getCaisDisponivel(){
+        return this.conjuntoDeEntidades.getCaisDisponivel();
+    }
+
+    // carreta
+    public boolean temCarretaDisponivel(){
+        return this.conjuntoDeEntidades.carretaDisponivel();
+    }
+
+    public Carreta getCarretaDisponivel(){
+        return this.conjuntoDeEntidades.getCarretaDisponivel();
+    }
+
+    // RTG
+    public boolean temRtgDisponivel(){
+        return this.conjuntoDeEntidades.rtgDisponivel();
+    }
+
+    public RTG getRtgDisponivel(){
+        return this.conjuntoDeEntidades.getRtgDisponivel();
+    }
+
+    // Reach Stacker
+    public boolean temReachStackerDisponivel(){
+        return this.conjuntoDeEntidades.reachStackerDisponivel();
+    }
+
+    public ReachStacker getReachStackerDisponivel(){
+        return this.conjuntoDeEntidades.getReachStackerDisponivel();
+    }
+
+    // Terminal de carga
+    public boolean temTerminalDeCArgaDisponivel(){
+        return this.conjuntoDeEntidades.terminalDeCargaDisponivel();
+    }
+
+    public TerminalDeCarga getTerminalDeCargaDisponivel(){
+        return this.conjuntoDeEntidades.getTerminalDeCargaDisponivel();
     }
 }

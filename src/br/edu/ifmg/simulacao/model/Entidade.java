@@ -46,4 +46,12 @@ public class Entidade {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
+    @Override
+    public String toString() {
+        return "Entidade{" +
+                "status=" + status +
+                ", tipo='" + tipo + '\'' +
+                '}';
+    }
 }

@@ -17,7 +17,11 @@ public class Main {
 	// write your code here
 
         Entrada e = new Entrada(System.getProperty("user.dir")+"/cenario.txt");
-        //Sistema s = e.leArquivo();
+        Sistema s = e.leArquivo();
+
+        ConjuntoDeEntidades ce = s.getConjuntoDeEntidades();
+        Grua g = ce.reservaGrua();
+        System.out.println(g.toString());
 
         //Distribuicoes d = new Distribuicoes();
         //Distribuicoes d = s.getDistribuicoes();

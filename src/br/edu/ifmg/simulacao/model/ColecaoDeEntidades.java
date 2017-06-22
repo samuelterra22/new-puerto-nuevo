@@ -31,4 +31,15 @@ public class ColecaoDeEntidades {
     public List<Entidade> getColecaoDeEntidade(){
         return this.colecaoDeEntidade;
     }
+
+    public Entidade reservaEntidade(){
+        for (Entidade e : this.colecaoDeEntidade) {
+            if (e.isLivre()){
+                e.reserva();
+                return e;
+            }
+        }
+        return null;
+    }
+
 }

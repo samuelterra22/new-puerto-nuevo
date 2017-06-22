@@ -1,5 +1,7 @@
 package br.edu.ifmg.simulacao.model;
 
+import jdk.nashorn.internal.ir.Terminal;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +39,7 @@ public class ConjuntoDeEntidades {
     public ColecaoDeEntidades getColecao(String entidade){
         return this.conjuntoDeEntidades.get(entidade);
     }
+
     public Entidade getEntidade(String chave, int i){
         return this.getColecao(chave).getEntidade(i);
     }
@@ -118,6 +121,10 @@ public class ConjuntoDeEntidades {
         return null;
     }
 
+    public Grua reservaGrua(){
+        return (Grua) this.getColecao("G").reservaEntidade();
+    }
+
     /*******************************************************************************************************************
     * Metodos de acesso da Equipe
     *******************************************************************************************************************/
@@ -143,6 +150,10 @@ public class ConjuntoDeEntidades {
             }
         }
         return null;
+    }
+
+    public Equipe reservaEquipe(){
+        return (Equipe) this.getColecao("E").reservaEntidade();
     }
 
     /*******************************************************************************************************************
@@ -172,6 +183,10 @@ public class ConjuntoDeEntidades {
         return null;
     }
 
+    public Cais reservaCais(){
+        return (Cais) this.getColecao("Q").reservaEntidade();
+    }
+
     /*******************************************************************************************************************
     * Metodos de acesso de Carreta
     *******************************************************************************************************************/
@@ -197,6 +212,10 @@ public class ConjuntoDeEntidades {
             }
         }
         return null;
+    }
+
+    public Carreta reservaCarreta(){
+        return (Carreta) this.getColecao("C").reservaEntidade();
     }
 
     /*******************************************************************************************************************
@@ -226,11 +245,15 @@ public class ConjuntoDeEntidades {
         return null;
     }
 
+    public RTG reservaRtg(){
+        return (RTG) this.getColecao("R").reservaEntidade();
+    }
+
     /*******************************************************************************************************************
     * Metodos de acesso de ReachStacker
     *******************************************************************************************************************/
     public Boolean reachStackerDisponivel(){
-        ColecaoDeEntidades colecaoReachStackers = getColecao("R");
+        ColecaoDeEntidades colecaoReachStackers = getColecao("S");
         List<Entidade> listaDeReachStackers = colecaoReachStackers.getColecaoDeEntidade();
 
         for (Entidade reachStacker : listaDeReachStackers) {
@@ -242,7 +265,7 @@ public class ConjuntoDeEntidades {
     }
 
     public ReachStacker getReachStackerDisponivel(){
-        ColecaoDeEntidades colecaoReachStackers = getColecao("R");
+        ColecaoDeEntidades colecaoReachStackers = getColecao("S");
         List<Entidade> listaDeReachStackers = colecaoReachStackers.getColecaoDeEntidade();
 
         for (Entidade reachStacker : listaDeReachStackers) {
@@ -253,10 +276,14 @@ public class ConjuntoDeEntidades {
         return null;
     }
 
+    public ReachStacker reservaReachStacker(){
+        return (ReachStacker) this.getColecao("S").reservaEntidade();
+    }
+
     /*******************************************************************************************************************
     * Metodos de acesso de Terminal de Carga
     *******************************************************************************************************************/
-    public Boolean reachTerminalDeCargaDisponivel(){
+    public Boolean terminalDeCargaDisponivel(){
         ColecaoDeEntidades colecaoTerminaisDeCarga = getColecao("R");
         List<Entidade> listaTerminaisDeCarga = colecaoTerminaisDeCarga.getColecaoDeEntidade();
 
@@ -278,6 +305,10 @@ public class ConjuntoDeEntidades {
             }
         }
         return null;
+    }
+
+    public TerminalDeCarga reservaTerminalDeCarga(){
+        return (TerminalDeCarga) this.getColecao("F").reservaEntidade();
     }
 
 }

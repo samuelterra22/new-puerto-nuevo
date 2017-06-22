@@ -9,7 +9,7 @@ public class EventNotice {
     private Double horaFim;
 
     private Tag eventoAtual;
-    private Tag proximoEvento;
+    private Tag enventoDeTermino;
 
     public EventNotice() {    }
 
@@ -41,11 +41,11 @@ public class EventNotice {
         this.eventoAtual = eventoAtual;
     }
 
-    public Tag getProximoEvento() {
-        return proximoEvento;
+    public Tag getEnventoDeTermino() {
+        return enventoDeTermino;
     }
 
-    public void setProximoEvento(Tag proximoEvento) {
-        this.proximoEvento = proximoEvento;
+    public void setEnventoDeTermino(Tag enventoDeTermino) {
+        this.enventoDeTermino = enventoDeTermino;
     }
 }
