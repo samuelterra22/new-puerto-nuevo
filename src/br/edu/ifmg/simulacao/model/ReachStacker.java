@@ -6,6 +6,6 @@ package br.edu.ifmg.simulacao.model;
 public class ReachStacker extends Entidade{
 
     public ReachStacker() {
-        super();
+        super("Reach");
     }
 }

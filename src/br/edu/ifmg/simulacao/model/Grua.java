@@ -7,6 +7,6 @@ package br.edu.ifmg.simulacao.model;
 public class Grua extends Entidade{
 
     public Grua() {
-        super();
+        super("Grua");
     }
 }

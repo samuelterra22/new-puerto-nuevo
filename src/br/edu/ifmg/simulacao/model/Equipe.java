@@ -6,6 +6,6 @@ package br.edu.ifmg.simulacao.model;
 public class Equipe extends Entidade{
 
     public Equipe() {
-        super();
+        super("Equipe");
     }
 }

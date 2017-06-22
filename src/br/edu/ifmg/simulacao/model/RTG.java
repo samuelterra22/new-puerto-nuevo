@@ -6,6 +6,6 @@ package br.edu.ifmg.simulacao.model;
 public class RTG extends Entidade{
 
     public RTG() {
-        super();
+        super("RTG");
     }
 }

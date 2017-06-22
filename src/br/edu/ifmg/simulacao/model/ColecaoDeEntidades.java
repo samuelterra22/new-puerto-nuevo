@@ -9,10 +9,10 @@ import java.util.List;
  * persiste na estrutura de dados depois que foi acessado pelo método de obtenção
  */
 
-public class ColecaoDeEntidade {
+public class ColecaoDeEntidades {
     private List<Entidade> colecaoDeEntidade;
 
-    public ColecaoDeEntidade(){
+    public ColecaoDeEntidades(){
         this.colecaoDeEntidade = new ArrayList<>();
     }
 
@@ -26,5 +26,9 @@ public class ColecaoDeEntidade {
 
     public Entidade destroeEntidade(int i){
         return this.colecaoDeEntidade.remove(i);
+    }
+
+    public List<Entidade> getColecaoDeEntidade(){
+        return this.colecaoDeEntidade;
     }
 }

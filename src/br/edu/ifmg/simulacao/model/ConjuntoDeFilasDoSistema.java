@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class ConjuntoDeFilasDoSistema {
     private static int LISTA = 0;
-    private static int FILA = 1;
+    private static int FILA  = 1;
     private static int PILHA = 2;
 
     // hash table que representa o conjunto de filas

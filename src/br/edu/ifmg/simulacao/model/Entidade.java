@@ -7,9 +7,11 @@ public class Entidade {
     // true  = estidade livre
     // false = estidade ocupada
     private Boolean status;
+    private String tipo;
 
-    public Entidade() {
+    public Entidade(String tipo) {
         this.status = true; // inicia como livre
+        this.tipo = tipo;
     }
 
     // obetem o status da entidade
@@ -35,5 +37,13 @@ public class Entidade {
     // libera a entidade, usado no fim de alguma atividade
     public void libera(){
         this.status = true;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 }

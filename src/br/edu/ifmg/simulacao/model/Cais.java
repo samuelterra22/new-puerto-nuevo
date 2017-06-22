@@ -6,6 +6,6 @@ package br.edu.ifmg.simulacao.model;
 public class Cais extends Entidade{
 
     public Cais() {
-        super();
+        super("Cais");
     }
 }

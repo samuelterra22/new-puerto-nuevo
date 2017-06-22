@@ -6,6 +6,6 @@ package br.edu.ifmg.simulacao.model;
 public class ComposicaoFerroviaria extends Entidade{
 
     public ComposicaoFerroviaria() {
-        super();
+        super("Composição Ferroviária");
     }
 }

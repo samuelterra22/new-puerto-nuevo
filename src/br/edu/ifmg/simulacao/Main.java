@@ -1,5 +1,7 @@
 package br.edu.ifmg.simulacao;
 
+import br.edu.ifmg.simulacao.Eventos.EventNotice;
+import br.edu.ifmg.simulacao.model.ConjuntoDeEntidades;
 import br.edu.ifmg.simulacao.model.ConjuntoDeFilasDoSistema;
 import br.edu.ifmg.simulacao.model.FilaDeEntidades;
 import br.edu.ifmg.simulacao.model.Grua;
@@ -15,7 +17,7 @@ public class Main {
 	// write your code here
 
         Entrada e = new Entrada(System.getProperty("user.dir")+"/cenario.txt");
-        Sistema s = e.leArquivo();
+        //Sistema s = e.leArquivo();
 
         //Distribuicoes d = new Distribuicoes();
         //Distribuicoes d = s.getDistribuicoes();
@@ -48,6 +50,30 @@ public class Main {
         //Grua g2 = (Grua)conjuntoDeFilasDoSistema.getEntidade("G");
 
         //System.out.println(a.getSize());
+        //ConjuntoDeEntidades ce = s.getConjuntoDeEntidades();
+        //Grua g = ce.getGruaDisponivel();
+
+        //System.out.println(ce.gruaDisponivel());
+
+        //EventNotice eventNotice = new EventNotice();
+        //eventNotice.setHoraInicio(1.5);
+        //eventNotice.setHoraFim(2.6);
+
+        //EventNotice eventNotice1 = new EventNotice();
+        //eventNotice1.setHoraInicio(6.5);
+        //eventNotice1.setHoraFim(13.6);
+
+        //EventNotice eventNotice3 = new EventNotice();
+        //eventNotice3.setHoraInicio(0.1);
+        //eventNotice3.setHoraFim(1.6);
+
+        //Fel fel = new Fel();
+
+        //fel.insere(eventNotice1);
+        //fel.insere(eventNotice);
+        //fel.insere(eventNotice3);
+        //fel.remove();
+        //fel.toString();
 
     }
 }

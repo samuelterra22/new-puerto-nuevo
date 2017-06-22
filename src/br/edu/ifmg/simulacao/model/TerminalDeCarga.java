@@ -6,6 +6,6 @@ package br.edu.ifmg.simulacao.model;
 public class TerminalDeCarga extends Entidade{
 
     public TerminalDeCarga() {
-        super();
+        super("Terminal de carga");
     }
 }
