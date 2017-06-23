@@ -242,6 +242,98 @@ public class Sistema {
         return this.conjuntoDeEntidades.quantidadeTerminaisDeCargaDisponiveis();
     }
 
+    /*******************************************************************************************************************
+     *                              Manipulação da geração dos tempos aleatórios
+     ******************************************************************************************************************/
+
+    public Double geraTempoNavioChegada(){
+        return this.getDistribuicoes().getTempoNavioChegada().getRandomDistribuicao();
+    }
+
+    public Double geraTempoGruaIcamento (){
+        return this.getDistribuicoes().getTempoGruaIcamento().getRandomDistribuicao();
+    }
+
+    public Double geraTempoGruaMovimentaContainerCheio (){
+        return this.getDistribuicoes().getTempoGruaMovimentaContainerCheio().getRandomDistribuicao();
+    }
+
+    public Double geraTempoGruaMovimentaContainerCaminhao (){
+        return this.getDistribuicoes().getTempoGruaMovimentaContainerCaminhao().getRandomDistribuicao();
+    }
+
+    public Double geraTempoGruaRetornaGuindasteVazio (){
+        return this.getDistribuicoes().getTempoGruaRetornaGuindasteVazio().getRandomDistribuicao();
+    }
+
+    public Double geraTempoEquipeAtracamento (){
+        return this.getDistribuicoes().getTempoEquipeAtracamento().getRandomDistribuicao();
+    }
+
+    public Double geraTempoEquipeDesatracamento (){
+        return this.getDistribuicoes().getTempoEquipeDesatracamento().getRandomDistribuicao();
+    }
+
+    public Double geraTempoCarretaMovimentaVazio (){
+        return this.getDistribuicoes().getTempoCarretaMovimentaVazio().getRandomDistribuicao();
+    }
+
+    public Double geraTempoCarretaMovimentaCarregado (){
+        return this.getDistribuicoes().getTempoCarretaMovimentaCarregado().getRandomDistribuicao();
+    }
+
+    public Double geraTempoRtgDescarregaContainerPatio (){
+        return this.getDistribuicoes().getTempoRtgDescarregaContainerPatio().getRandomDistribuicao();
+    }
+
+    public Double geraTempoRtgMovimentaPilhaDestino (){
+        return this.getDistribuicoes().getTempoRtgMovimentaPilhaDestino().getRandomDistribuicao();
+    }
+
+    public Double geraTempoRtgEmpilhaContainerPatio (){
+        return this.getDistribuicoes().getTempoRtgEmpilhaContainerPatio().getRandomDistribuicao();
+    }
+
+    public Double geraTempoReachDescarregaContainerPatio (){
+        return this.getDistribuicoes().getTempoReachDescarregaContainerPatio().getRandomDistribuicao();
+    }
+
+    public Double geraTempoReachMovimentaPilhaDestino (){
+        return this.getDistribuicoes().getTempoReachMovimentaPilhaDestino().getRandomDistribuicao();
+    }
+
+    public Double geraTempoReachEmpilhaContainerPatio (){
+        return this.getDistribuicoes().getTempoReachEmpilhaContainerPatio().getRandomDistribuicao();
+    }
+
+    public Double geraTempoReachDesempilhaContainer (){
+        return this.getDistribuicoes().getTempoReachDesempilhaContainer().getRandomDistribuicao();
+    }
+
+    public Double geraTempoReachMovimentaContainerTerminal (){
+        return this.getDistribuicoes().getTempoReachMovimentaContainerTerminal().getRandomDistribuicao();
+    }
+
+    public Double geraTempoReachCarregaContainerVagao (){
+        return this.getDistribuicoes().getTempoReachCarregaContainerVagao().getRandomDistribuicao();
+    }
+
+    public Double geraTempoReachMovimentaVazio (){
+        return this.getDistribuicoes().getTempoReachMovimentaVazio().getRandomDistribuicao();
+    }
+
+    public Double geraTempoFerroviariaChegada (){
+        return this.getDistribuicoes().getTempoFerroviariaChegada().getRandomDistribuicao();
+    }
+
+    public Double geraTempoFerroviariaPosicionaTerminal (){
+        return this.getDistribuicoes().getTempoFerroviariaPosicionaTerminal().getRandomDistribuicao();
+    }
+
+    public Double geraTempoFerroviariaLiberaTerminal (){
+        return this.getDistribuicoes().getTempoFerroviariaLiberaTerminal().getRandomDistribuicao();
+    }
+
     @Override
     public String toString() {
         return "Sistema{\n" +

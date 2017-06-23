@@ -18,7 +18,7 @@ public class Main {
         Entrada e = new Entrada(System.getProperty("user.dir")+"/cenario.txt");
         Sistema s = e.leArquivo();
 
-        //System.out.println(s.getDistribuicoes().getTempoNavioChegada().getRandomDistribuicao());
+        System.out.println(s.getDistribuicoes().getTempoNavioChegada().getRandomDistribuicao());
 
         //ConjuntoDeEntidades conjuntoDeEntidades = s.getConjuntoDeEntidades();
 
