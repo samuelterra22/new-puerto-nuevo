@@ -17,7 +17,7 @@ public class Main {
 	// write your code here
 
         Entrada e = new Entrada(System.getProperty("user.dir")+"/cenario.txt");
-        //Sistema s = e.leArquivo();
+        Sistema s = e.leArquivo();
 
         //for (int i=0; i < 90; i++){
         //    System.out.print((int)((Math.random() * 7) + 0)+", ");

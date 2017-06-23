@@ -20,8 +20,11 @@ public class Sistema {
     // Quantidade maxima de vagoes na composicao
     private Integer T_MAX;
 
-    // Tempo da simulação
-    private Double tempoDeSimulacao;
+    // Tempo máximo da simulação
+    private Double tempoMaximoDeSimulacao;
+
+    // Tempo atual da simulação
+    private Double tempoAtualDaSimulacao;
 
     // Conjunto de filas do sistema
     private ConjuntoDeFilasDoSistema filasDoSistema;
@@ -40,17 +43,6 @@ public class Sistema {
 
     public void setDistribuicoes(Distribuicoes distribuicoes) {
         this.distribuicoes = distribuicoes;
-    }
-
-    /*******************************************************************************************************************
-     * Conjuntos de entidades
-     ******************************************************************************************************************/
-    public ConjuntoDeEntidades getConjuntoDeEntidades() {
-        return conjuntoDeEntidades;
-    }
-
-    public void setConjuntoDeEntidades(ConjuntoDeEntidades conjuntoDeEntidades) {
-        this.conjuntoDeEntidades = conjuntoDeEntidades;
     }
 
     /*******************************************************************************************************************
@@ -78,29 +70,33 @@ public class Sistema {
     /*******************************************************************************************************************
      * Tempo de simulação
      ******************************************************************************************************************/
-    public Double getTempoDeSimulacao() {
-        return tempoDeSimulacao;
+    public Double getTempoMaximoDeSimulacao() {
+        return tempoMaximoDeSimulacao;
     }
 
-    public void setTempoDeSimulacao(Double tempoDeSimulacao) {
-        this.tempoDeSimulacao = tempoDeSimulacao;
+    public void setTempoMaximoDeSimulacao(Double tempoMaximoDeSimulacao) {
+        this.tempoMaximoDeSimulacao = tempoMaximoDeSimulacao;
     }
 
-
-    /*******************************************************************************************************************
-     * Conjunto de filas do sistema
-     ******************************************************************************************************************/
-    public ConjuntoDeFilasDoSistema getFilasDoSistema() {
-        return filasDoSistema;
+    public Double getTempoAtualDaSimulacao() {
+        return tempoAtualDaSimulacao;
     }
 
-    public void setFilasDoSistema(ConjuntoDeFilasDoSistema filasDoSistema) {
-        this.filasDoSistema = filasDoSistema;
+    public void setTempoAtualDaSimulacao(Double tempoAtualDaSimulacao) {
+        this.tempoAtualDaSimulacao = tempoAtualDaSimulacao;
     }
 
     /*******************************************************************************************************************
      *                              Manipulação das Entidades do Sistema
      ******************************************************************************************************************/
+    public ConjuntoDeEntidades getConjuntoDeEntidades() {
+        return conjuntoDeEntidades;
+    }
+
+    public void setConjuntoDeEntidades(ConjuntoDeEntidades conjuntoDeEntidades) {
+        this.conjuntoDeEntidades = conjuntoDeEntidades;
+    }
+
     // navio
     public Navio criaNavio(){
         return Fabrica.criaNavio();
@@ -350,6 +346,62 @@ public class Sistema {
         return this.getDistribuicoes().getTempoFerroviariaLiberaTerminal().getRandomDistribuicao();
     }
 
+    /*******************************************************************************************************************
+     *                              Manipulação das filas do sistema
+     ******************************************************************************************************************/
+
+    public ConjuntoDeFilasDoSistema getFilasDoSistema() {
+        return filasDoSistema;
+    }
+
+    public void setFilasDoSistema(ConjuntoDeFilasDoSistema filasDoSistema) {
+        this.filasDoSistema = filasDoSistema;
+    }
+
+    public boolean temEntidadeFilaNavioAguardarCais (){
+        return this.filasDoSistema.temEntidadeFilaNavioAguardarCais();
+    }
+
+    public boolean temEntidadeFilaNavioAguardarDescarregar (){
+        return this.filasDoSistema.temEntidadeFilaNavioAguardarDescarregar();
+    }
+
+    public boolean temEntidadeFilaGruaAguardarTransporte (){
+        return this.filasDoSistema.temEntidadeFilaGruaAguardarTransporte();
+    }
+
+    public boolean temEntidadeFilaCarretaNaGrua (){
+        return this.filasDoSistema.temEntidadeFilaCarretaNaGrua();
+    }
+
+    public boolean temEntidadeFilaCarretaAguardarDescargaPatio (){
+        return this.filasDoSistema.temEntidadeFilaCarretaAguardarDescargaPatio();
+    }
+
+    public boolean temEntidadeFilaRTGParaEmpilhar (){
+        return this.filasDoSistema.temEntidadeFilaRTGParaEmpilhar();
+    }
+
+    public boolean temEntidadeFilaReachParaDesempilhar (){
+        return this.filasDoSistema.temEntidadeFilaReachParaDesempilhar();
+    }
+
+    public boolean temEntidadeFilaReachAguardaDesempilhar (){
+        return this.filasDoSistema.temEntidadeFilaReachAguardaDesempilhar();
+    }
+
+    public boolean temEntidadeFilaComposicaoPatioManobra (){
+        return this.filasDoSistema.temEntidadeFilaComposicaoPatioManobra();
+    }
+
+    public boolean temEntidadeFilaComposicaoAguardarReach (){
+        return this.filasDoSistema.temEntidadeFilaComposicaoAguardarReach();
+    }
+
+    public boolean temEntidadeFilaComposicaoAguardaLiberacao (){
+        return this.filasDoSistema.temEntidadeFilaComposicaoAguardaLiberacao();
+    }
+
     @Override
     public String toString() {
         return "Sistema{\n" +
@@ -357,7 +409,7 @@ public class Sistema {
                 ",\n conjuntoDeEntidades=" + conjuntoDeEntidades.toString() +
                 ",\n T_MIN=" + T_MIN +
                 ",\n T_MAX=" + T_MAX +
-                ",\n tempoDeSimulacao=" + tempoDeSimulacao +
+                ",\n tempoMaximoDeSimulacao=" + tempoMaximoDeSimulacao +
                 ",\n filasDoSistema=" + filasDoSistema +
                 "\n}";
     }

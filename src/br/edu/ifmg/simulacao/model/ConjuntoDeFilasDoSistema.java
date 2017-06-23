@@ -25,7 +25,7 @@ public class ConjuntoDeFilasDoSistema {
     }
 
     // adiciona a entidade em determinada fila, se a entidade nao existir, cria uma nova
-    private void addEntidade(String fila, Entidade entidade){
+    private void addEntidadeNaFila(String fila, Entidade entidade){
 
         // verifica se existe a fila
         if (this.filaDeEntidades.containsKey(fila)){
@@ -38,7 +38,7 @@ public class ConjuntoDeFilasDoSistema {
     }
 
     // retorna uma entidade da frente da fila de determinada tipo de entidade (ex. navio, equipe)
-    private Entidade getEntidade(String fila){
+    private Entidade getEntidadeDaFila(String fila){
         if (this.filaDeEntidades.containsKey(fila)){
             return this.filaDeEntidades.get(fila).getEntidade();
         }
@@ -56,101 +56,156 @@ public class ConjuntoDeFilasDoSistema {
 
     // filas de navios aguardando no cais
     public void addFilaNavioAguardarCais (Navio navio){
-        this.addEntidade("filaNavioAguardarCais", navio);
+        this.addEntidadeNaFila("filaNavioAguardarCais", navio);
     }
 
     public Navio consomeFilaNavioAguardarCais (){
-        return (Navio) getEntidade("filaNavioAguardarCais");
+        return (Navio) getEntidadeDaFila("filaNavioAguardarCais");
+    }
+
+    public boolean temEntidadeFilaNavioAguardarCais (){
+        FilaDeEntidades fila = this.getFilaDeEntidades("filaNavioAguardarCais");
+        return fila.getSize() > 0;
     }
 
     // fila de navios aguardando descarregar
     public void addFilaNavioAguardarDescarregar (Navio navio){
-        this.addEntidade("filaNavioAguardarDescarregar", navio);
+        this.addEntidadeNaFila("filaNavioAguardarDescarregar", navio);
     }
 
     public Navio consomeFilaNavioAguardarDescarregar (){
-        return (Navio) getEntidade("filaNavioAguardarDescarregar");
+        return (Navio) getEntidadeDaFila("filaNavioAguardarDescarregar");
+    }
+
+    public boolean temEntidadeFilaNavioAguardarDescarregar (){
+        FilaDeEntidades fila = this.getFilaDeEntidades("filaNavioAguardarDescarregar");
+        return fila.getSize() > 0;
     }
 
     // fila de gruas aguardando o transporte
     public void addFilaGruaAguardarTransporte (Grua grua){
-        this.addEntidade("filaGruaAguardarTransporte", grua);
+        this.addEntidadeNaFila("filaGruaAguardarTransporte", grua);
     }
 
     public Grua consomeFilaGruaAguardarTransporte (){
-        return (Grua) getEntidade("filaGruaAguardarTransporte");
+        return (Grua) getEntidadeDaFila("filaGruaAguardarTransporte");
+    }
+
+    public boolean temEntidadeFilaGruaAguardarTransporte (){
+        FilaDeEntidades fila = this.getFilaDeEntidades("filaGruaAguardarTransporte");
+        return fila.getSize() > 0;
     }
 
     // filas de carretas aguardando a grua
     public void addFilaCarretaNaGrua (Carreta carreta){
-        this.addEntidade("filaCarretaNaGrua", carreta);
+        this.addEntidadeNaFila("filaCarretaNaGrua", carreta);
     }
 
     public Carreta consomeFilaCarretaNaGrua (){
-        return (Carreta) getEntidade("filaCarretaNaGrua");
+        return (Carreta) getEntidadeDaFila("filaCarretaNaGrua");
+    }
+
+    public boolean temEntidadeFilaCarretaNaGrua (){
+        FilaDeEntidades fila = this.getFilaDeEntidades("filaCarretaNaGrua");
+        return fila.getSize() > 0;
     }
 
     // filas de carretas aguardando descarregar no patio
     public void addFilaCarretaAguardarDescargaPatio (Carreta carreta){
-        this.addEntidade("filaCarretaAguardarDescargaPatio", carreta);
+        this.addEntidadeNaFila("filaCarretaAguardarDescargaPatio", carreta);
     }
 
     public Carreta consomeFilaCarretaAguardarDescargaPatio (){
-        return (Carreta) getEntidade("filaCarretaAguardarDescargaPatio");
+        return (Carreta) getEntidadeDaFila("filaCarretaAguardarDescargaPatio");
+    }
+
+    public boolean temEntidadeFilaCarretaAguardarDescargaPatio (){
+        FilaDeEntidades fila = this.getFilaDeEntidades("filaCarretaAguardarDescargaPatio");
+        return fila.getSize() > 0;
     }
 
     // fila de RTGs aguardando para empilhar
     public void addFilaRTGParaEmpilhar (RTG rtg){
-        this.addEntidade("filaRTGParaEmpilhar", rtg);
+        this.addEntidadeNaFila("filaRTGParaEmpilhar", rtg);
     }
 
     public RTG consomeFilaRTGParaEmpilhar (){
-        return (RTG) getEntidade("filaRTGParaEmpilhar");
+        return (RTG) getEntidadeDaFila("filaRTGParaEmpilhar");
+    }
+
+    public boolean temEntidadeFilaRTGParaEmpilhar (){
+        FilaDeEntidades fila = this.getFilaDeEntidades("filaRTGParaEmpilhar");
+        return fila.getSize() > 0;
     }
 
     // fila de reachs aguardando para empilhar
     public void addFilaReachParaDesempilhar (ReachStacker reach){
-        this.addEntidade("filaReachParaDesempilhar", reach);
+        this.addEntidadeNaFila("filaReachParaDesempilhar", reach);
     }
 
     public ReachStacker consomeFilaReachParaDesempilhar (){
-        return (ReachStacker) getEntidade("filaReachParaDesempilhar");
+        return (ReachStacker) getEntidadeDaFila("filaReachParaDesempilhar");
+    }
+
+    public boolean temEntidadeFilaReachParaDesempilhar (){
+        FilaDeEntidades fila = this.getFilaDeEntidades("filaReachParaDesempilhar");
+        return fila.getSize() > 0;
     }
 
     // fila de reach aguardando para desempilhar
     public void addFilaReachAguardaDesempilhar (ReachStacker reach){
-        this.addEntidade("filaReachAguardaDesempilhar", reach);
+        this.addEntidadeNaFila("filaReachAguardaDesempilhar", reach);
     }
 
     public ReachStacker consomeFilaReachAguardaDesempilhar (){
-        return (ReachStacker) getEntidade("filaReachAguardaDesempilhar");
+        return (ReachStacker) getEntidadeDaFila("filaReachAguardaDesempilhar");
+    }
+
+    public boolean temEntidadeFilaReachAguardaDesempilhar (){
+        FilaDeEntidades fila = this.getFilaDeEntidades("filaReachAguardaDesempilhar");
+        return fila.getSize() > 0;
     }
 
     // fila de composições aguardando no patio de manobra
     public void addFilaComposicaoPatioManobra (ComposicaoFerroviaria composicao){
-        this.addEntidade("filaComposicaoPatioManobra", composicao);
+        this.addEntidadeNaFila("filaComposicaoPatioManobra", composicao);
     }
 
     public ComposicaoFerroviaria consomeFilaComposicaoPatioManobra (){
-        return (ComposicaoFerroviaria) getEntidade("filaComposicaoPatioManobra");
+        return (ComposicaoFerroviaria) getEntidadeDaFila("filaComposicaoPatioManobra");
+    }
+
+    public boolean temEntidadeFilaComposicaoPatioManobra (){
+        FilaDeEntidades fila = this.getFilaDeEntidades("filaComposicaoPatioManobra");
+        return fila.getSize() > 0;
     }
 
     // fila de composiçõoes aguardando reach
     public void addFilaComposicaoAguardarReach (ComposicaoFerroviaria composicao){
-        this.addEntidade("filaComposicaoAguardarReach", composicao);
+        this.addEntidadeNaFila("filaComposicaoAguardarReach", composicao);
     }
 
     public ComposicaoFerroviaria consomeFilaComposicaoAguardarReach (){
-        return (ComposicaoFerroviaria) getEntidade("filaComposicaoAguardarReach");
+        return (ComposicaoFerroviaria) getEntidadeDaFila("filaComposicaoAguardarReach");
+    }
+
+    public boolean temEntidadeFilaComposicaoAguardarReach (){
+        FilaDeEntidades fila = this.getFilaDeEntidades("filaComposicaoAguardarReach");
+        return fila.getSize() > 0;
     }
 
     // fila de composições aguardando liberação
     public void addFilaComposicaoAguardaLiberacao (ComposicaoFerroviaria composicao){
-        this.addEntidade("filaComposicaoAguardaLiberacao", composicao);
+        this.addEntidadeNaFila("filaComposicaoAguardaLiberacao", composicao);
     }
 
     public ComposicaoFerroviaria consomeFilaComposicaoAguardaLiberacao (){
-        return (ComposicaoFerroviaria) getEntidade("filaComposicaoAguardaLiberacao");
+        return (ComposicaoFerroviaria) getEntidadeDaFila("filaComposicaoAguardaLiberacao");
+    }
+
+    public boolean temEntidadeFilaComposicaoAguardaLiberacao (){
+        FilaDeEntidades fila = this.getFilaDeEntidades("filaComposicaoAguardaLiberacao");
+        return fila.getSize() > 0;
     }
 
 }

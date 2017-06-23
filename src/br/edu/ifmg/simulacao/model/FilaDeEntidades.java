@@ -6,8 +6,7 @@ import java.util.List;
 /**
  * FilaDeEntidades
  *
- * Esta é uma estrutura de dados projetada para itens de entidade consumíveis na loja, em outras palavras,
- * uma vez que um item foi acessado pelo método get, ele é removido da lista de entidades.
+ * Esta é uma estrutura de dados realiza as operações das politicas de Lista, Fila e Pilha.
  */
 
 public class FilaDeEntidades {

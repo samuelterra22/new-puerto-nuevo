@@ -73,7 +73,7 @@ public class Entrada {
                             String resultSplit[] = linha.split(" ");
                             // pega o tempo de simulação
                             //System.out.println("tempo de simulacao: "+resultSplit[2]);
-                            this.sistema.setTempoDeSimulacao(Double.parseDouble(resultSplit[2]));
+                            this.sistema.setTempoMaximoDeSimulacao(Double.parseDouble(resultSplit[2]));
                             break;
                         }
                         case "G": {
