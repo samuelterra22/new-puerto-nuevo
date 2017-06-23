@@ -57,9 +57,12 @@ public abstract class Navio extends Entidade{
         this.capacidadeMaxima = capacidadeMaxima;
     }
 
+    // sorteia entre 70% a 100% da capacidade do navio
     public void sorteiaQuantidadeDeContainers(){
-        int qtdContainers = (int) ((Math.random() * (this.getCapacidadeMaxima() - this.getCapacidadeMinima())) +
-                this.getCapacidadeMinima());
+        Double max = this.getCapacidadeMaxima();
+        Double min = max*0.7;
+
+        int qtdContainers = (int) ((Math.random() * ( max - min)) + min);
         this.setQuantidadeDeContainers(qtdContainers);
     }
 

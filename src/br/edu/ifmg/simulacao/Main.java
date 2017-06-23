@@ -19,6 +19,13 @@ public class Main {
         Entrada e = new Entrada(System.getProperty("user.dir")+"/cenario.txt");
         //Sistema s = e.leArquivo();
 
+        //int max = 1000;
+        //double min = max*0.7;
+
+        //int x = (int) ((Math.random() * (max - min)) + min);
+
+        //System.out.println(x);
+
         //Navio navio = new Panamax();
 
         //System.out.println("Qtd min: "+navio.getCapacidadeMinima());
