@@ -24,7 +24,7 @@ public class ConjuntoDeFilasDoSistema {
         this.filaDeEntidades = new HashMap<String, FilaDeEntidades>();
     }
 
-    // adiciona a entidade em determinada fila, se a entidade nao existir, create uma nova
+    // adiciona a entidade em determinada fila, se a entidade nao existir, cria uma nova
     private void addEntidade(String fila, Entidade entidade){
 
         // verifica se existe a fila

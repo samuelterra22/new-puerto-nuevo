@@ -83,8 +83,8 @@ public class ConjuntoDeEntidades {
                     this.adicionarEntidade("F", new TerminalDeCarga());
                     break;
                 }
-                case "T": {
-                    this.adicionarEntidade("T", new ComposicaoFerroviaria());
+                default:{
+                    System.out.println("Entidade '+entidade+'não conhecida.");
                     break;
                 }
             }
