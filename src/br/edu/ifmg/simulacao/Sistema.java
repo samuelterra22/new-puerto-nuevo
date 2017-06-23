@@ -9,14 +9,19 @@ public class Sistema {
 
     // Distribuições obetidas apartir do arquivo de entrada
     private Distribuicoes distribuicoes;
+
     // Conjunto de entidades
     private ConjuntoDeEntidades conjuntoDeEntidades;
+
     // Quantidade minima de vagoes na composicao
     private Integer T_MIN;
+
     // Quantidade maxima de vagoes na composicao
     private Integer T_MAX;
+
     // Tempo da simulação
     private Double tempoDeSimulacao;
+
     // Conjunto de filas do sistema
     private ConjuntoDeFilasDoSistema filasDoSistema;
 

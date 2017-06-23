@@ -10,5 +10,6 @@ public class Feeder extends Navio {
         this.setDescricao("");
         this.setCapacidadeMinima(1001.0);
         this.setCapacidadeMaxima(2000.0);
+        super.sorteiaQuantidadeDeContainers();
     }
 }

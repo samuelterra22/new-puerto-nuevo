@@ -11,7 +11,7 @@ public abstract class Navio extends Entidade{
     private String descricao;
     private Double capacidadeMinima;
     private Double capacidadeMaxima;
-    private int numeroContainer;
+    private int quantidadeDeContainers;
 
     public Navio() {
         super("Navio");
@@ -33,12 +33,12 @@ public abstract class Navio extends Entidade{
         this.descricao = descricao;
     }
 
-    public int getNumeberOfContainers() {
-        return this.numeroContainer;
+    public int getQuantidadeDeContainers() {
+        return this.quantidadeDeContainers;
     }
 
-    public void setNumeberOfContainers(int numeroContainer) {
-        this.numeroContainer = numeroContainer;
+    private void setQuantidadeDeContainers(int numeroContainer) {
+        this.quantidadeDeContainers = numeroContainer;
     }
 
     public Double getCapacidadeMinima() {
@@ -57,6 +57,12 @@ public abstract class Navio extends Entidade{
         this.capacidadeMaxima = capacidadeMaxima;
     }
 
+    public void sorteiaQuantidadeDeContainers(){
+        int qtdContainers = (int) ((Math.random() * (this.getCapacidadeMaxima() - this.getCapacidadeMinima())) +
+                this.getCapacidadeMinima());
+        this.setQuantidadeDeContainers(qtdContainers);
+    }
+
     @Override
     public String toString() {
         return "Navio{" +
@@ -65,7 +71,7 @@ public abstract class Navio extends Entidade{
                 ", descricao='" + descricao + '\'' +
                 ", capacidadeMinima=" + capacidadeMinima +
                 ", capacidadeMaxima=" + capacidadeMaxima +
-                ", numeroContainer=" + numeroContainer +
+                ", quantidadeDeContainers=" + quantidadeDeContainers +
                 '}';
     }
 }

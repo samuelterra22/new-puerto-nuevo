@@ -1,7 +1,7 @@
 package br.edu.ifmg.simulacao.model.navios;
 
 /**
- * Created by samuel on 13/03/17.
+ * Entidade navio do tipo Ultra Large
  */
 public class UltraLarge extends Navio {
 
@@ -10,5 +10,6 @@ public class UltraLarge extends Navio {
         setDescricao("");
         setCapacidadeMinima(14501.0);
         setCapacidadeMaxima(18270.0);
+        super.sorteiaQuantidadeDeContainers();
     }
 }

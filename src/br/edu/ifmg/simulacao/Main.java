@@ -5,7 +5,8 @@ import br.edu.ifmg.simulacao.model.*;
 import br.edu.ifmg.simulacao.model.navios.Navio;
 import br.edu.ifmg.simulacao.model.navios.Panamax;
 
-import java.util.List;
+import java.util.*;
+import java.util.Random;
 
 /**
  * Classe principal da aplicação.
@@ -16,9 +17,15 @@ public class Main {
 	// write your code here
 
         Entrada e = new Entrada(System.getProperty("user.dir")+"/cenario.txt");
-        Sistema s = e.leArquivo();
+        //Sistema s = e.leArquivo();
 
-        System.out.println(s.getDistribuicoes().getTempoNavioChegada().getRandomDistribuicao());
+        //Navio navio = new Panamax();
+
+        //System.out.println("Qtd min: "+navio.getCapacidadeMinima());
+        //System.out.println("Qtd max: "+navio.getCapacidadeMaxima());
+        //System.out.println(navio.getQuantidadeDeContainers());
+
+        //System.out.println(s.getDistribuicoes().getTempoNavioChegada().getRandomDistribuicao());
 
         //ConjuntoDeEntidades conjuntoDeEntidades = s.getConjuntoDeEntidades();
 
@@ -104,8 +111,6 @@ public class Main {
         //conjuntoDeFilasDoSistema.addFilaNavioAguardarCais(panamax);
         //Navio g = conjuntoDeFilasDoSistema.consomeFilaNavioAguardarCais();
         //System.out.println(g.toString());
-
-
 
     }
 }
