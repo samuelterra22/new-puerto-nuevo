@@ -1,10 +1,9 @@
 package br.edu.ifmg.simulacao;
 
 import br.edu.ifmg.simulacao.Eventos.EventNotice;
-import br.edu.ifmg.simulacao.model.ConjuntoDeEntidades;
-import br.edu.ifmg.simulacao.model.ConjuntoDeFilasDoSistema;
-import br.edu.ifmg.simulacao.model.FilaDeEntidades;
-import br.edu.ifmg.simulacao.model.Grua;
+import br.edu.ifmg.simulacao.model.*;
+import br.edu.ifmg.simulacao.model.navios.Navio;
+import br.edu.ifmg.simulacao.model.navios.Panamax;
 
 import java.util.List;
 
@@ -17,11 +16,16 @@ public class Main {
 	// write your code here
 
         Entrada e = new Entrada(System.getProperty("user.dir")+"/cenario.txt");
-        Sistema s = e.leArquivo();
+        //Sistema s = e.leArquivo();
 
-        ConjuntoDeEntidades ce = s.getConjuntoDeEntidades();
-        Grua g = ce.reservaGrua();
-        System.out.println(g.toString());
+        //ConjuntoDeEntidades ce = s.getConjuntoDeEntidades();
+        //Grua g = s.reservaGrua();
+        //Grua g1 = s.reservaGrua();
+        //Grua g2 = s.reservaGrua();
+        //Grua g3 = s.reservaGrua();
+        //Grua g4 = s.reservaGrua();
+        //Grua g5 = s.reservaGrua();
+        //System.out.println(g2.toString());
 
         //Distribuicoes d = new Distribuicoes();
         //Distribuicoes d = s.getDistribuicoes();
@@ -78,6 +82,14 @@ public class Main {
         //fel.insere(eventNotice3);
         //fel.remove();
         //fel.toString();
+
+        //ConjuntoDeFilasDoSistema conjuntoDeFilasDoSistema = new ConjuntoDeFilasDoSistema();
+        //Panamax panamax = new Panamax();
+        //System.out.println(panamax.toString());
+        //conjuntoDeFilasDoSistema.addFilaNavioAguardarCais(panamax);
+        //Navio g = conjuntoDeFilasDoSistema.consomeFilaNavioAguardarCais();
+        //System.out.println(g.toString());
+
 
     }
 }

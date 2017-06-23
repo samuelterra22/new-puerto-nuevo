@@ -32,9 +32,14 @@ public class ColecaoDeEntidades {
         return this.colecaoDeEntidade;
     }
 
+    public boolean temEntidade(){
+        return this.colecaoDeEntidade.size() > 0;
+    }
+
     public Entidade reservaEntidade(){
         for (Entidade e : this.colecaoDeEntidade) {
             if (e.isLivre()){
+                this.colecaoDeEntidade.remove(e);
                 e.reserva();
                 return e;
             }
@@ -42,4 +47,10 @@ public class ColecaoDeEntidades {
         return null;
     }
 
+    @Override
+    public String toString() {
+        return "ColecaoDeEntidades{" +
+                "colecaoDeEntidade=" + colecaoDeEntidade +
+                '}';
+    }
 }

@@ -48,4 +48,14 @@ public class EventNotice {
     public void setEnventoDeTermino(Tag enventoDeTermino) {
         this.enventoDeTermino = enventoDeTermino;
     }
+
+    @Override
+    public String toString() {
+        return "EventNotice{" +
+                "horaInicio=" + horaInicio +
+                ", horaFim=" + horaFim +
+                ", eventoAtual=" + eventoAtual +
+                ", enventoDeTermino=" + enventoDeTermino +
+                '}';
+    }
 }

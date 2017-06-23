@@ -20,7 +20,6 @@ public class ConjuntoDeEntidades {
 
     public void adicionarColecao(String chave, ColecaoDeEntidades colecao){
         this.conjuntoDeEntidades.put(chave, colecao);
-        
     }
 
     // adiciona entidade no hash
@@ -311,4 +310,10 @@ public class ConjuntoDeEntidades {
         return (TerminalDeCarga) this.getColecao("F").reservaEntidade();
     }
 
+    @Override
+    public String toString() {
+        return "ConjuntoDeEntidades{" +
+                "conjuntoDeEntidades=" + conjuntoDeEntidades +
+                '}';
+    }
 }

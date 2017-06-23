@@ -1,15 +1,21 @@
 package br.edu.ifmg.simulacao.model.navios;
 
+import br.edu.ifmg.simulacao.model.Entidade;
+
 /**
  * Classe abstrata que implementa os metodos do navio
  */
-public abstract class Navio {
+public abstract class Navio extends Entidade{
 
     private String nome;
     private String descricao;
     private Double capacidadeMinima;
     private Double capacidadeMaxima;
     private int numeroContainer;
+
+    public Navio() {
+        super("Navio");
+    }
 
     public String getNome() {
         return nome;
@@ -49,5 +55,17 @@ public abstract class Navio {
 
     public void setCapacidadeMaxima(Double capacidadeMaxima) {
         this.capacidadeMaxima = capacidadeMaxima;
+    }
+
+    @Override
+    public String toString() {
+        return "Navio{" +
+                "livre='" + super.isLivre() + '\'' +
+                ", nome='" + nome + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", capacidadeMinima=" + capacidadeMinima +
+                ", capacidadeMaxima=" + capacidadeMaxima +
+                ", numeroContainer=" + numeroContainer +
+                '}';
     }
 }

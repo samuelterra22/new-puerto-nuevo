@@ -29,11 +29,11 @@ public class FilaDeEntidades {
     }
 
     // metodo para adicionar entidade na lista de entidades
-    public void addEntity(Entidade entidade) {
+    public void addEntidade(Entidade entidade) {
         this.listaDeEntidades.add(entidade);
     }
 
-    public void addEntity(int i, Entidade Entidade) {
+    public void addEntidade(int i, Entidade Entidade) {
         if (this.politica == LISTA) {
             this.listaDeEntidades.add(i, Entidade);
         }

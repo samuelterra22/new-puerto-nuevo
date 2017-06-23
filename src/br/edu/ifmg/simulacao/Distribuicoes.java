@@ -398,4 +398,11 @@ public class Distribuicoes {
         Triangular e = (Triangular) this.distribuicoes.get(T_LIB);
         return e.getRandomDistribuicao();
     }
+
+    @Override
+    public String toString() {
+        return "Distribuicoes{" +
+                "distribuicoes=" + distribuicoes +
+                '}';
+    }
 }

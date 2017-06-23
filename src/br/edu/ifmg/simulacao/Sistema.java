@@ -93,7 +93,7 @@ public class Sistema {
     }
 
     /*******************************************************************************************************************
-     * Manipulação das Entidades do Sistema
+     *                              Manipulação das Entidades do Sistema
      ******************************************************************************************************************/
     // grua
     public boolean temGruaDisponivel(){
@@ -102,6 +102,10 @@ public class Sistema {
 
     public Grua getGruaDisponivel(){
         return this.conjuntoDeEntidades.getGruaDisponivel();
+    }
+
+    public Grua reservaGrua(){
+        return this.conjuntoDeEntidades.reservaGrua();
     }
 
     // equipe
@@ -113,6 +117,10 @@ public class Sistema {
         return this.conjuntoDeEntidades.getEquipeDisponivel();
     }
 
+    public Equipe reservaEquipe(){
+        return this.conjuntoDeEntidades.reservaEquipe();
+    }
+
     // cais
     public boolean temCaisDisponivel(){
         return this.conjuntoDeEntidades.caisDisponivel();
@@ -120,6 +128,10 @@ public class Sistema {
 
     public Cais getCaisDisponivel(){
         return this.conjuntoDeEntidades.getCaisDisponivel();
+    }
+
+    public Cais reservaCais(){
+        return this.conjuntoDeEntidades.reservaCais();
     }
 
     // carreta
@@ -131,6 +143,10 @@ public class Sistema {
         return this.conjuntoDeEntidades.getCarretaDisponivel();
     }
 
+    public Carreta reservaCarreta(){
+        return this.conjuntoDeEntidades.reservaCarreta();
+    }
+
     // RTG
     public boolean temRtgDisponivel(){
         return this.conjuntoDeEntidades.rtgDisponivel();
@@ -138,6 +154,10 @@ public class Sistema {
 
     public RTG getRtgDisponivel(){
         return this.conjuntoDeEntidades.getRtgDisponivel();
+    }
+
+    public RTG reservaRtg(){
+        return this.conjuntoDeEntidades.reservaRtg();
     }
 
     // Reach Stacker
@@ -149,6 +169,10 @@ public class Sistema {
         return this.conjuntoDeEntidades.getReachStackerDisponivel();
     }
 
+    public ReachStacker reservaReachStacker(){
+        return this.conjuntoDeEntidades.reservaReachStacker();
+    }
+
     // Terminal de carga
     public boolean temTerminalDeCArgaDisponivel(){
         return this.conjuntoDeEntidades.terminalDeCargaDisponivel();
@@ -156,5 +180,9 @@ public class Sistema {
 
     public TerminalDeCarga getTerminalDeCargaDisponivel(){
         return this.conjuntoDeEntidades.getTerminalDeCargaDisponivel();
+    }
+
+    public TerminalDeCarga reservaTerminalDeCarga(){
+        return this.conjuntoDeEntidades.reservaTerminalDeCarga();
     }
 }
