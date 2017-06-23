@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Entitycolection
+ * Colecao de Entidades
  * Esta é uma estrutura de dados projetada para itens de entidade não consumíveis na loja, ou seja, um item
  * persiste na estrutura de dados depois que foi acessado pelo método de obtenção
  */
@@ -47,10 +47,21 @@ public class ColecaoDeEntidades {
         return null;
     }
 
+    public Entidade liberaEntidade(Entidade entidade){
+        entidade.libera();
+        this.addEntidade(entidade);
+        return entidade;
+    }
+
+    public int getQuantidade(){
+        return this.colecaoDeEntidade.size();
+    }
+
     @Override
     public String toString() {
         return "ColecaoDeEntidades{" +
-                "colecaoDeEntidade=" + colecaoDeEntidade +
-                '}';
+                "\n\tQuantidade=" + colecaoDeEntidade.size() +
+                "\n\tcolecaoDeEntidade=" + colecaoDeEntidade.toString() +
+                "\n}\n";
     }
 }

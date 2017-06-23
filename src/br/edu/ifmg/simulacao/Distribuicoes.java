@@ -401,8 +401,8 @@ public class Distribuicoes {
 
     @Override
     public String toString() {
-        return "Distribuicoes{" +
-                "distribuicoes=" + distribuicoes +
-                '}';
+        return "\nDistribuicoes{\n" +
+                "distribuicoes=" + distribuicoes.toString() +
+                "\n}";
     }
 }

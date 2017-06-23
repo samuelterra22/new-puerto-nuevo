@@ -16,7 +16,20 @@ public class Main {
 	// write your code here
 
         Entrada e = new Entrada(System.getProperty("user.dir")+"/cenario.txt");
-        //Sistema s = e.leArquivo();
+        Sistema s = e.leArquivo();
+
+        ConjuntoDeEntidades conjuntoDeEntidades = s.getConjuntoDeEntidades();
+
+        //System.out.println(conjuntoDeEntidades.getColecao("G").getColecaoDeEntidade().size());
+        //Grua g = s.reservaGrua();
+        //System.out.println(conjuntoDeEntidades.getColecao("G").getColecaoDeEntidade().size());
+        //Grua g1 = s.liberaGrua(g);
+        //System.out.println(conjuntoDeEntidades.getColecao("G").getColecaoDeEntidade().size());
+
+        //System.out.println(conjuntoDeEntidades.toString());
+        //System.out.println(g.toString());
+
+        //System.out.println(s.toString());
 
         //ConjuntoDeEntidades ce = s.getConjuntoDeEntidades();
         //Grua g = s.reservaGrua();

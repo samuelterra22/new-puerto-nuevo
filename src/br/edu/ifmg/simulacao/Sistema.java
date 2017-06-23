@@ -108,6 +108,14 @@ public class Sistema {
         return this.conjuntoDeEntidades.reservaGrua();
     }
 
+    public Grua liberaGrua(Grua grua){
+        return this.conjuntoDeEntidades.liberaGrua(grua);
+    }
+
+    public int quantidadeGruasDisponiveis(){
+        return this.conjuntoDeEntidades.quantidadeGruasDisponiveis();
+    }
+
     // equipe
     public boolean temEquipeDisponivel(){
         return this.conjuntoDeEntidades.equipeDisponivel();
@@ -119,6 +127,14 @@ public class Sistema {
 
     public Equipe reservaEquipe(){
         return this.conjuntoDeEntidades.reservaEquipe();
+    }
+
+    public Equipe liberaEquipe(Equipe equipe){
+        return this.conjuntoDeEntidades.liberaEquipe(equipe);
+    }
+
+    public int quantidadeEquipessDisponiveis(){
+        return this.conjuntoDeEntidades.quantidadeEquipesDisponiveis();
     }
 
     // cais
@@ -134,6 +150,14 @@ public class Sistema {
         return this.conjuntoDeEntidades.reservaCais();
     }
 
+    public Cais liberaCais(Cais cais){
+        return this.conjuntoDeEntidades.liberaCais(cais);
+    }
+
+    public int quantidadeCaisDisponiveis(){
+        return this.conjuntoDeEntidades.quantidadeCaisDisponiveis();
+    }
+
     // carreta
     public boolean temCarretaDisponivel(){
         return this.conjuntoDeEntidades.carretaDisponivel();
@@ -145,6 +169,14 @@ public class Sistema {
 
     public Carreta reservaCarreta(){
         return this.conjuntoDeEntidades.reservaCarreta();
+    }
+
+    public Carreta liberaCais(Carreta carreta){
+        return this.conjuntoDeEntidades.liberaCarreta(carreta);
+    }
+
+    public int quantidadeCarretasDisponiveis(){
+        return this.conjuntoDeEntidades.quantidadeCarretasDisponiveis();
     }
 
     // RTG
@@ -160,6 +192,14 @@ public class Sistema {
         return this.conjuntoDeEntidades.reservaRtg();
     }
 
+    public RTG liberaRtg(RTG rtg){
+        return this.conjuntoDeEntidades.liberaRtg(rtg);
+    }
+
+    public int quantidadeRtgsDisponiveis(){
+        return this.conjuntoDeEntidades.quantidadeRtgsDisponiveis();
+    }
+
     // Reach Stacker
     public boolean temReachStackerDisponivel(){
         return this.conjuntoDeEntidades.reachStackerDisponivel();
@@ -173,6 +213,14 @@ public class Sistema {
         return this.conjuntoDeEntidades.reservaReachStacker();
     }
 
+    public ReachStacker liberaReachStacker(ReachStacker reachStacker){
+        return this.conjuntoDeEntidades.liberaReachStacker(reachStacker);
+    }
+
+    public int quantidadeReachStackersDisponiveis(){
+        return this.conjuntoDeEntidades.quantidadeReachStackersDisponiveis();
+    }
+
     // Terminal de carga
     public boolean temTerminalDeCArgaDisponivel(){
         return this.conjuntoDeEntidades.terminalDeCargaDisponivel();
@@ -184,5 +232,25 @@ public class Sistema {
 
     public TerminalDeCarga reservaTerminalDeCarga(){
         return this.conjuntoDeEntidades.reservaTerminalDeCarga();
+    }
+
+    public TerminalDeCarga liberaTerminalDeCarga(TerminalDeCarga terminalDeCarga){
+        return this.conjuntoDeEntidades.liberaTerminalDeCarga(terminalDeCarga);
+    }
+
+    public int quantidadeTerminaisDeCargaDisponiveis(){
+        return this.conjuntoDeEntidades.quantidadeTerminaisDeCargaDisponiveis();
+    }
+
+    @Override
+    public String toString() {
+        return "Sistema{\n" +
+                "distribuicoes=" + distribuicoes.toString() +
+                ",\n conjuntoDeEntidades=" + conjuntoDeEntidades.toString() +
+                ",\n T_MIN=" + T_MIN +
+                ",\n T_MAX=" + T_MAX +
+                ",\n tempoDeSimulacao=" + tempoDeSimulacao +
+                ",\n filasDoSistema=" + filasDoSistema +
+                "\n}";
     }
 }

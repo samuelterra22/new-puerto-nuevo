@@ -49,9 +49,9 @@ public class Entidade {
 
     @Override
     public String toString() {
-        return "Entidade{" +
-                "status=" + status +
-                ", tipo='" + tipo + '\'' +
-                '}';
+        return "\nEntidade{" +
+                "\n\ttipo='" + tipo + '\'' +
+                ",\n\tstatus=" + status +
+                "\n}\n";
     }
 }

@@ -1,7 +1,5 @@
 package br.edu.ifmg.simulacao.model;
 
-import jdk.nashorn.internal.ir.Terminal;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -120,9 +118,21 @@ public class ConjuntoDeEntidades {
         return null;
     }
 
+    // reserva grua
     public Grua reservaGrua(){
         return (Grua) this.getColecao("G").reservaEntidade();
     }
+
+    // libera grua
+    public Grua liberaGrua(Grua grua){
+        return (Grua) this.getColecao("G").liberaEntidade(grua);
+    }
+
+    // qtd de gruas disponiveis
+    public int quantidadeGruasDisponiveis(){
+        return this.getColecao("G").getQuantidade();
+    }
+
 
     /*******************************************************************************************************************
     * Metodos de acesso da Equipe
@@ -153,6 +163,16 @@ public class ConjuntoDeEntidades {
 
     public Equipe reservaEquipe(){
         return (Equipe) this.getColecao("E").reservaEntidade();
+    }
+
+    // libera equipe
+    public Equipe liberaEquipe(Equipe equipe){
+        return (Equipe) this.getColecao("E").liberaEntidade(equipe);
+    }
+
+    // qtd de equipes disponiveis
+    public int quantidadeEquipesDisponiveis(){
+        return this.getColecao("E").getQuantidade();
     }
 
     /*******************************************************************************************************************
@@ -186,6 +206,16 @@ public class ConjuntoDeEntidades {
         return (Cais) this.getColecao("Q").reservaEntidade();
     }
 
+    // libera cais
+    public Cais liberaCais(Cais cais){
+        return (Cais) this.getColecao("Q").liberaEntidade(cais);
+    }
+
+    // qtd de cais disponiveis
+    public int quantidadeCaisDisponiveis(){
+        return this.getColecao("Q").getQuantidade();
+    }
+
     /*******************************************************************************************************************
     * Metodos de acesso de Carreta
     *******************************************************************************************************************/
@@ -215,6 +245,16 @@ public class ConjuntoDeEntidades {
 
     public Carreta reservaCarreta(){
         return (Carreta) this.getColecao("C").reservaEntidade();
+    }
+
+    // libera carreta
+    public Carreta liberaCarreta(Carreta carreta){
+        return (Carreta) this.getColecao("C").liberaEntidade(carreta);
+    }
+
+    // qtd de carreta disponiveis
+    public int quantidadeCarretasDisponiveis(){
+        return this.getColecao("C").getQuantidade();
     }
 
     /*******************************************************************************************************************
@@ -248,6 +288,16 @@ public class ConjuntoDeEntidades {
         return (RTG) this.getColecao("R").reservaEntidade();
     }
 
+    // libera rtg
+    public RTG liberaRtg(RTG rtg){
+        return (RTG) this.getColecao("R").liberaEntidade(rtg);
+    }
+
+    // qtd de rtgs disponiveis
+    public int quantidadeRtgsDisponiveis(){
+        return this.getColecao("R").getQuantidade();
+    }
+
     /*******************************************************************************************************************
     * Metodos de acesso de ReachStacker
     *******************************************************************************************************************/
@@ -277,6 +327,16 @@ public class ConjuntoDeEntidades {
 
     public ReachStacker reservaReachStacker(){
         return (ReachStacker) this.getColecao("S").reservaEntidade();
+    }
+
+    // libera rtg
+    public ReachStacker liberaReachStacker(ReachStacker reach){
+        return (ReachStacker) this.getColecao("S").liberaEntidade(reach);
+    }
+
+    // qtd de rtgs disponiveis
+    public int quantidadeReachStackersDisponiveis(){
+        return this.getColecao("S").getQuantidade();
     }
 
     /*******************************************************************************************************************
@@ -310,10 +370,21 @@ public class ConjuntoDeEntidades {
         return (TerminalDeCarga) this.getColecao("F").reservaEntidade();
     }
 
+    // libera terminal de carga
+    public TerminalDeCarga liberaTerminalDeCarga(TerminalDeCarga terminalDeCarga){
+        return (TerminalDeCarga) this.getColecao("F").liberaEntidade(terminalDeCarga);
+    }
+
+    // qtd de terminais de cargas
+    public int quantidadeTerminaisDeCargaDisponiveis(){
+        return this.getColecao("F").getQuantidade();
+    }
+
     @Override
     public String toString() {
-        return "ConjuntoDeEntidades{" +
-                "conjuntoDeEntidades=" + conjuntoDeEntidades +
-                '}';
+        return "\nConjuntoDeEntidades{" +
+                "\n\tQuantidade=" + conjuntoDeEntidades.size() +
+                "\n\tconjuntoDeEntidades=" + conjuntoDeEntidades +
+                "\n}";
     }
 }
