@@ -1,9 +1,12 @@
 package br.edu.ifmg.simulacao;
 
 
+import br.edu.ifmg.simulacao.model.ComposicaoFerroviaria;
 import br.edu.ifmg.simulacao.model.navios.*;
 
-
+/**
+ * Classe Fabrica responsável por ser os 'nascedouros' de navios e composições ferroviárias da simulação.
+ * */
 public class Fabrica {
 
     private static final int FEEDER       = 0;
@@ -19,35 +22,27 @@ public class Fabrica {
         switch (tipo){
             case FEEDER: {
                 return new Feeder();
-                break;
             }
             case FEEDER_MAX: {
                 return  new FeederMax();
-                break;
             }
             case NEW_PANAMAX: {
                 return new NewPanamax();
-                break;
             }
             case PANAMAX: {
                 return new Panamax();
-                break;
             }
             case POST_PANAMAX: {
                 return new PostPanamax();
-                break;
             }
             case SMALL_FEEDER: {
                 return new SmallFeeder();
-                break;
             }
             case ULTRA_LARGE: {
                 return new UltraLarge();
-                break;
             }
             default:{
                 throw new IllegalArgumentException("Tipo invalido!");
-                break;
             }
         }
 
@@ -56,6 +51,13 @@ public class Fabrica {
     public static Navio criaNavio(){
         int tipo = (int) ((Math.random() * 7) + 0); // faz o sorteio de 0 a 6
         return instanciaNavio(tipo);
+    }
+
+    public static ComposicaoFerroviaria criaComposicaoFerroviaria(Integer min, Integer max){
+        int capacidadeDeVagoes = (int) ((Math.random() * (max - min)) + min);
+        ComposicaoFerroviaria composicaoFerroviaria = new ComposicaoFerroviaria();
+        composicaoFerroviaria.setCapacidadeDeVagoes(capacidadeDeVagoes);
+        return composicaoFerroviaria;
     }
 
 }

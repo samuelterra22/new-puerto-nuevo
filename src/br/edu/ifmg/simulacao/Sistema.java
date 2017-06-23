@@ -1,6 +1,7 @@
 package br.edu.ifmg.simulacao;
 
 import br.edu.ifmg.simulacao.model.*;
+import br.edu.ifmg.simulacao.model.navios.Navio;
 
 /**
  * Classe que contem todas as variaveis (Conjunto, filas, Distribuições) do sistema para realizar a simulação.
@@ -100,6 +101,16 @@ public class Sistema {
     /*******************************************************************************************************************
      *                              Manipulação das Entidades do Sistema
      ******************************************************************************************************************/
+    // navio
+    public Navio criaNavio(){
+        return Fabrica.criaNavio();
+    }
+
+    // composição ferroviaria
+    public ComposicaoFerroviaria criaComposicaoFerroviaria(){
+        return Fabrica.criaComposicaoFerroviaria(this.T_MIN, this.T_MAX);
+    }
+
     // grua
     public boolean temGruaDisponivel(){
         return this.conjuntoDeEntidades.gruaDisponivel();
