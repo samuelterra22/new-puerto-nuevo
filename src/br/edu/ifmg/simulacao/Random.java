@@ -10,11 +10,14 @@ public class Random {
     private Double currentValue;
 
     public void setSeed(Double seed){
-        this.currentValue = seed;
+       this.currentValue = seed;
     }
 
     //distribuição uniforme e suas variações
     public Double uniform(){
+
+        this.setSeed((double) System.currentTimeMillis());
+
         this.currentValue = ((Double)A*this.currentValue+C)%M;
         return (Double)this.currentValue;
     }

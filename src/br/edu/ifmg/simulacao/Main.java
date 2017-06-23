@@ -18,7 +18,9 @@ public class Main {
         Entrada e = new Entrada(System.getProperty("user.dir")+"/cenario.txt");
         Sistema s = e.leArquivo();
 
-        ConjuntoDeEntidades conjuntoDeEntidades = s.getConjuntoDeEntidades();
+        //System.out.println(s.getDistribuicoes().getTempoNavioChegada().getRandomDistribuicao());
+
+        //ConjuntoDeEntidades conjuntoDeEntidades = s.getConjuntoDeEntidades();
 
         //System.out.println(conjuntoDeEntidades.getColecao("G").getColecaoDeEntidade().size());
         //Grua g = s.reservaGrua();
@@ -102,6 +104,7 @@ public class Main {
         //conjuntoDeFilasDoSistema.addFilaNavioAguardarCais(panamax);
         //Navio g = conjuntoDeFilasDoSistema.consomeFilaNavioAguardarCais();
         //System.out.println(g.toString());
+
 
 
     }
