@@ -3,7 +3,7 @@ package br.edu.ifmg.simulacao;
 import br.edu.ifmg.simulacao.model.*;
 
 /**
- * Classe que contem todas as variaveis do sistema para realizar a simulação.
+ * Classe que contem todas as variaveis (Conjunto, filas, Distribuições) do sistema para realizar a simulação.
  */
 public class Sistema {
 
