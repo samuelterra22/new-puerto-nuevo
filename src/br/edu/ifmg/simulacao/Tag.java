@@ -1,5 +1,9 @@
 package br.edu.ifmg.simulacao;
 
+/**
+ * Este enum contem todas as tags necessárias para manter o controle das filas, agendamento e consumo de eventos ma FEL
+ *
+ * */
 public enum Tag {
     Fila_Navio_Aguardar_Cais,
     Fila_Navio_Aguardar_Descarregar,
@@ -13,5 +17,28 @@ public enum Tag {
     Fila_Composicao_Aguardar_Reach,
     Fila_Composicao_Aguarda_Liberacao,
 
+    ChegadaNavio,
+    ChegadaTerminalFerroviario,
+    EventNotice,
+    FimAtracamento,
+    FimCarregaTransporte,
+    FimCarregaVagao,
+    FimDesatracar,
+    FimDescarregaContainerPatio,
+    FimDesempilhamento,
+    FimEmpilhamentoReach,
+    FimEmpilhamentoRtg,
+    FimIcamento,
+    FimLiberaTerminal,
+    FimMovimentaAteVagao,
+    FimMovimentaCarregadoCarretas,
+    FimMovimentaContainer,
+    FimMovimentaContainerAteTerminal,
+    FimMovimentaContainerPilhaDestino,
+    FimMovimentaGruaVazia,
+    FimMovimentaPilha,
+    FimMovimentaVazioPatio,
+    FimMovimentoVazio,
+    FimPosicionaTerminal,
 
 }

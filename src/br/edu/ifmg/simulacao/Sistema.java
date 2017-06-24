@@ -1,5 +1,6 @@
 package br.edu.ifmg.simulacao;
 
+import br.edu.ifmg.simulacao.Eventos.EventNotice;
 import br.edu.ifmg.simulacao.model.*;
 import br.edu.ifmg.simulacao.model.navios.Navio;
 
@@ -8,11 +9,11 @@ import br.edu.ifmg.simulacao.model.navios.Navio;
  */
 public class Sistema {
 
-    // Distribuições obetidas apartir do arquivo de entrada
-    private Distribuicoes distribuicoes;
+    // Tempo máximo da simulação
+    private Double tempoMaximoDeSimulacao;
 
-    // Conjunto de entidades
-    private ConjuntoDeEntidades conjuntoDeEntidades;
+    // Tempo atual da simulação
+    private Double tempoAtualDaSimulacao;
 
     // Quantidade minima de vagoes na composicao
     private Integer T_MIN;
@@ -20,18 +21,23 @@ public class Sistema {
     // Quantidade maxima de vagoes na composicao
     private Integer T_MAX;
 
-    // Tempo máximo da simulação
-    private Double tempoMaximoDeSimulacao;
+    // Distribuições obetidas apartir do arquivo de entrada
+    private Distribuicoes distribuicoes;
 
-    // Tempo atual da simulação
-    private Double tempoAtualDaSimulacao;
+    // Conjunto de entidades
+    private ConjuntoDeEntidades conjuntoDeEntidades;
 
     // Conjunto de filas do sistema
     private ConjuntoDeFilasDoSistema filasDoSistema;
 
+    // Lista de eventos futuros
+    private Fel fel;
+
     public Sistema() {
         this.distribuicoes = new Distribuicoes();
         this.conjuntoDeEntidades = new ConjuntoDeEntidades();
+        this.filasDoSistema = new ConjuntoDeFilasDoSistema();
+        this.fel = new Fel();
     }
 
     /*******************************************************************************************************************
@@ -358,6 +364,94 @@ public class Sistema {
         this.filasDoSistema = filasDoSistema;
     }
 
+    public Navio consomeFilaNavioAguardarCais (){
+        return this.filasDoSistema.consomeFilaNavioAguardarCais();
+    }
+
+    public Navio consomeFilaNavioAguardarDescarregar (){
+        return this.filasDoSistema.consomeFilaNavioAguardarDescarregar();
+    }
+
+    public Grua consomeFilaGruaAguardarTransporte (){
+        return this.filasDoSistema.consomeFilaGruaAguardarTransporte();
+    }
+
+    public Carreta consomeFilaCarretaNaGrua (){
+        return this.filasDoSistema.consomeFilaCarretaNaGrua();
+    }
+
+    public Carreta consomeFilaCarretaAguardarDescargaPatio (){
+        return this.filasDoSistema.consomeFilaCarretaAguardarDescargaPatio();
+    }
+
+    public RTG consomeFilaRTGParaEmpilhar (){
+        return this.filasDoSistema.consomeFilaRTGParaEmpilhar();
+    }
+
+    public ReachStacker consomeFilaReachParaDesempilhar (){
+        return this.filasDoSistema.consomeFilaReachParaDesempilhar();
+    }
+
+    public ReachStacker consomeFilaReachAguardaDesempilhar (){
+        return this.filasDoSistema.consomeFilaReachAguardaDesempilhar();
+    }
+
+    public ComposicaoFerroviaria consomeFilaComposicaoPatioManobra (){
+        return this.filasDoSistema.consomeFilaComposicaoPatioManobra();
+    }
+
+    public ComposicaoFerroviaria consomeFilaComposicaoAguardarReach (){
+        return this.filasDoSistema.consomeFilaComposicaoAguardarReach();
+    }
+
+    public ComposicaoFerroviaria consomeFilaComposicaoAguardaLiberacao (){
+        return this.filasDoSistema.consomeFilaComposicaoAguardaLiberacao();
+    }
+
+    public void addEntidadeFilaNavioAguardarCais (Navio navio){
+        this.filasDoSistema.addFilaNavioAguardarCais(navio);
+    }
+
+    public void addEntidadeFilaNavioAguardarDescarregar (Navio navio){
+        this.filasDoSistema.addFilaNavioAguardarDescarregar(navio);
+    }
+
+    public void addEntidadeFilaGruaAguardarTransporte (Grua grua){
+        this.filasDoSistema.addFilaGruaAguardarTransporte(grua);
+    }
+
+    public void addEntidadeFilaCarretaNaGrua (Carreta carreta){
+        this.filasDoSistema.addFilaCarretaNaGrua(carreta);
+    }
+
+    public void addEntidadeFilaCarretaAguardarDescargaPatio (Carreta carreta){
+        this.filasDoSistema.addFilaCarretaAguardarDescargaPatio(carreta);
+    }
+
+    public void addEntidadeFilaRTGParaEmpilhar (RTG rtg){
+        this.filasDoSistema.addFilaRTGParaEmpilhar(rtg);
+    }
+
+    public void addEntidadeFilaReachParaDesempilhar (ReachStacker reach){
+        this.filasDoSistema.addFilaReachParaDesempilhar(reach);
+    }
+
+    public void addEntidadeFilaReachAguardaDesempilhar (ReachStacker reach){
+        this.filasDoSistema.addFilaReachAguardaDesempilhar(reach);
+    }
+
+    public void addEntidadeFilaComposicaoPatioManobra (ComposicaoFerroviaria composicao){
+        this.filasDoSistema.addFilaComposicaoPatioManobra(composicao);
+    }
+
+    public void addEntidadeFilaComposicaoAguardarReach (ComposicaoFerroviaria composicao){
+        this.filasDoSistema.addFilaComposicaoAguardarReach(composicao);
+    }
+
+    public void addEntidadeFilaComposicaoAguardaLiberacao (ComposicaoFerroviaria composicao){
+        this.filasDoSistema.addFilaComposicaoAguardaLiberacao(composicao);
+    }
+
     public boolean temEntidadeFilaNavioAguardarCais (){
         return this.filasDoSistema.temEntidadeFilaNavioAguardarCais();
     }
@@ -400,6 +494,18 @@ public class Sistema {
 
     public boolean temEntidadeFilaComposicaoAguardaLiberacao (){
         return this.filasDoSistema.temEntidadeFilaComposicaoAguardaLiberacao();
+    }
+
+    /*******************************************************************************************************************
+     *                              Manipulação da FEL
+     ******************************************************************************************************************/
+
+    public EventNotice removeDaFel(){
+        return this.fel.consome();
+    }
+
+    public void adicionaNaFel(EventNotice eventNotice){
+        this.fel.insere(eventNotice);
     }
 
     @Override

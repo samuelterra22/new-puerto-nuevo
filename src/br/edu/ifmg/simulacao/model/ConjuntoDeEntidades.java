@@ -41,7 +41,7 @@ public class ConjuntoDeEntidades {
         return this.getColecao(chave).getEntidade(i);
     }
 
-    // remove uma coleção inteira de entidades
+    // consome uma coleção inteira de entidades
     private void destroeColecao(int i){
         this.conjuntoDeEntidades.remove(i);
     }

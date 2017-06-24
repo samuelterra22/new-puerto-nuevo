@@ -6,11 +6,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- ConjuntoDeFilasDoSistema é um modelo de abstração para um conjunto de todas as filas do sistema
- Cada fila é uma forma especial de uma filaDeEntidades, oss itens são acessados em uma política FIFO
-
+ ConjuntoDeFilasDoSistema é um modelo de abstração para um conjunto de todas as filas do sistema. Cada fila é uma forma
+ especial de uma filaDeEntidades, os itens são acessados em uma política FIFO.
  */
-
 public class ConjuntoDeFilasDoSistema {
     private static int LISTA = 0;
     private static int FILA  = 1;
@@ -51,7 +49,7 @@ public class ConjuntoDeFilasDoSistema {
     }
 
     /*******************************************************************************************************************
-     *                                    Manipulação das Filas do sistema
+     *                                    Manipulação das Filas de Entidades
      ******************************************************************************************************************/
 
     // filas de navios aguardando no cais

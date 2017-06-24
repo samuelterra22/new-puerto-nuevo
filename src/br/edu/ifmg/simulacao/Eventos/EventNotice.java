@@ -33,14 +33,6 @@ public class EventNotice {
         return horaFim-horaInicio;
     }
 
-    public Tag getEventoAtual() {
-        return eventoAtual;
-    }
-
-    public void setEventoAtual(Tag eventoAtual) {
-        this.eventoAtual = eventoAtual;
-    }
-
     public Tag getEnventoDeTermino() {
         return enventoDeTermino;
     }
@@ -49,12 +41,19 @@ public class EventNotice {
         this.enventoDeTermino = enventoDeTermino;
     }
 
+    public Tag getEventoAtual() {
+        return eventoAtual;
+    }
+
+    public void setEventoAtual(Tag eventoAtual) {
+        this.eventoAtual = eventoAtual;
+    }
+
     @Override
     public String toString() {
         return "EventNotice{" +
                 "horaInicio=" + horaInicio +
                 ", horaFim=" + horaFim +
-                ", eventoAtual=" + eventoAtual +
                 ", enventoDeTermino=" + enventoDeTermino +
                 '}';
     }

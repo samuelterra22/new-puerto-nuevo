@@ -113,7 +113,7 @@ public class Main {
         //fel.insere(eventNotice1);
         //fel.insere(eventNotice);
         //fel.insere(eventNotice3);
-        //fel.remove();
+        //fel.consome();
         //fel.toString();
 
         //ConjuntoDeFilasDoSistema conjuntoDeFilasDoSistema = new ConjuntoDeFilasDoSistema();
