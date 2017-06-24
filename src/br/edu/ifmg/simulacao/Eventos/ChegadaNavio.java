@@ -44,7 +44,7 @@ public class ChegadaNavio {
                 eventNotice.setEventoAtual(Tag.ChegadaNavio);
                 eventNotice.setEnventoDeTermino(Tag.FimAtracamento);
 
-                sistema.adicionaNaFel(eventNotice);
+                sistema.agendaNaFel(eventNotice);
             }
 
         }else{

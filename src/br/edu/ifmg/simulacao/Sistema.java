@@ -512,7 +512,7 @@ public class Sistema {
         return this.fel.consome();
     }
 
-    public void adicionaNaFel(EventNotice eventNotice){
+    public void agendaNaFel(EventNotice eventNotice){
         this.fel.insere(eventNotice);
     }
 
