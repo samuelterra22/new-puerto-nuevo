@@ -40,7 +40,7 @@ public class ChegadaNavio {
                 eventNotice.setHoraInicio(sistema.getRelogio());
                 eventNotice.setHoraFim(sistema.getRelogio()+duracaoAtracamento);
                 eventNotice.setEventoAtual(Tag.ChegadaNavio);
-                eventNotice.setEnventoDeTermino(Tag.ChegadaTerminalFerroviario);
+                eventNotice.setEnventoDeTermino(Tag.FimAtracamento);
 
                 sistema.adicionaNaFel(eventNotice);
             }
