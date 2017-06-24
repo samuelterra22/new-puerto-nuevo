@@ -13,7 +13,7 @@ public class Sistema {
     private Double tempoMaximoDeSimulacao;
 
     // Tempo atual da simulação
-    private Double tempoAtualDaSimulacao;
+    private Double relogio;
 
     // Quantidade minima de vagoes na composicao
     private Integer T_MIN;
@@ -34,10 +34,26 @@ public class Sistema {
     private Fel fel;
 
     public Sistema() {
+        this.relogio = 0.0;
         this.distribuicoes = new Distribuicoes();
         this.conjuntoDeEntidades = new ConjuntoDeEntidades();
         this.filasDoSistema = new ConjuntoDeFilasDoSistema();
         this.fel = new Fel();
+    }
+
+    /*******************************************************************************************************************
+     * Relogio com o tempo atual da simulação
+     ******************************************************************************************************************/
+    public Double getRelogio() {
+        return relogio;
+    }
+
+    public void setRelogio(Double relogio) {
+        this.relogio = relogio;
+    }
+
+    public void atualizaRelogio(Double tempo){
+        this.relogio += tempo;
     }
 
     /*******************************************************************************************************************
@@ -82,14 +98,6 @@ public class Sistema {
 
     public void setTempoMaximoDeSimulacao(Double tempoMaximoDeSimulacao) {
         this.tempoMaximoDeSimulacao = tempoMaximoDeSimulacao;
-    }
-
-    public Double getTempoAtualDaSimulacao() {
-        return tempoAtualDaSimulacao;
-    }
-
-    public void setTempoAtualDaSimulacao(Double tempoAtualDaSimulacao) {
-        this.tempoAtualDaSimulacao = tempoAtualDaSimulacao;
     }
 
     /*******************************************************************************************************************

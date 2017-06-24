@@ -3,6 +3,7 @@ package br.edu.ifmg.simulacao.Eventos;
 
 import br.edu.ifmg.simulacao.Fabrica;
 import br.edu.ifmg.simulacao.Sistema;
+import br.edu.ifmg.simulacao.Tag;
 import br.edu.ifmg.simulacao.model.Cais;
 import br.edu.ifmg.simulacao.model.Equipe;
 import br.edu.ifmg.simulacao.model.navios.Navio;
@@ -33,14 +34,23 @@ public class ChegadaNavio {
                 Equipe equipeReservada = sistema.reservaEquipe();
 
                 Double duracaoAtracamento = sistema.geraTempoEquipeAtracamento();
+
+                // cria event notice
+                EventNotice eventNotice = new EventNotice();
+                eventNotice.setHoraInicio(sistema.getRelogio());
+                eventNotice.setHoraFim(sistema.getRelogio()+duracaoAtracamento);
+                eventNotice.setEventoAtual(Tag.ChegadaNavio);
+                eventNotice.setEnventoDeTermino(Tag.ChegadaTerminalFerroviario);
+
+                sistema.adicionaNaFel(eventNotice);
             }
 
         }else{
             // nao tem cais disponivel
-
+            sistema.addEntidadeFilaNavioAguardarCais(navio);
         }
 
-        return null;
+        return sistema;
     }
 
 }

@@ -17,7 +17,26 @@ public class Main {
 	// write your code here
 
         Entrada e = new Entrada(System.getProperty("user.dir")+"/cenario.txt");
-        Sistema s = e.leArquivo();
+        //Sistema s = e.leArquivo();
+
+        //Fel fel = new Fel();
+
+        //EventNotice eventNotice1 = new EventNotice();
+        //eventNotice1.setHoraInicio(1.0);
+        //eventNotice1.setHoraFim(2.5);
+        //eventNotice1.setEventoAtual(Tag.ChegadaNavio);
+        //eventNotice1.setEnventoDeTermino(Tag.ChegadaTerminalFerroviario);
+
+        //EventNotice eventNotice2 = new EventNotice();
+        //eventNotice2.setHoraInicio(0.0);
+        //eventNotice2.setHoraFim(0.5);
+        //eventNotice2.setEventoAtual(Tag.FimMovimentaContainerPilhaDestino);
+        //eventNotice2.setEnventoDeTermino(Tag.FimIcamento);
+
+        //fel.insere(eventNotice2);
+        //fel.insere(eventNotice1);
+
+        //System.out.println(fel.toString());
 
         //for (int i=0; i < 90; i++){
         //    System.out.print((int)((Math.random() * 7) + 0)+", ");

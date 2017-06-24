@@ -46,19 +46,17 @@ public class Fel{
 
     public String toString() {
 
-        StringBuffer sb = new StringBuffer();
+        StringBuilder stringBuilder = new StringBuilder();
 
         for (EventNotice e : eventNotices) {
-            sb.append("Evento:          "+e.getEventoAtual()+"\n");
-            sb.append("Hora de inicio:  "+e.getHoraInicio()+"\n");
-            sb.append("Hora de fim:     "+e.getHoraFim()+"\n");
-            sb.append("Duração:         "+e.getDuracao()+"\n");
-            sb.append("Evento futuro:   "+e.getEnventoDeTermino()+"\n");
-            sb.append("\n");
+            stringBuilder.append("Evento:          ").append(e.getEventoAtual()).append("\n");
+            stringBuilder.append("Hora de inicio:  ").append(e.getHoraInicio()).append("\n");
+            stringBuilder.append("Hora de fim:     ").append(e.getHoraFim()).append("\n");
+            stringBuilder.append("Duração:         ").append(e.getDuracao()).append("\n");
+            stringBuilder.append("Evento futuro:   ").append(e.getEnventoDeTermino()).append("\n");
+            stringBuilder.append("\n");
         }
 
-        System.out.println(sb);
-
-        return null;
+        return stringBuilder.toString();
     }
 }
