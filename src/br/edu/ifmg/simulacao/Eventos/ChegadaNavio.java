@@ -56,6 +56,7 @@ public class ChegadaNavio {
             sistema.addEntidadeFilaNavioAguardarCais(navio);
         }
 
+        // retorna o sistema para ser tratado no momento de consumo da FEL
         return sistema;
     }
 
