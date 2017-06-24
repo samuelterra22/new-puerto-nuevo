@@ -32,6 +32,7 @@ public class ChegadaTerminalFerroviario {
             eventNotice.setHoraInicio(sistema.getRelogio());
             eventNotice.setHoraFim(sistema.getRelogio()+duracaoParaPosicionarTerminal);
 
+            // adiciona no event notice as entidades reservadas
             eventNotice.setTerminalDeCarga(terminalDeCargaReservado);
             eventNotice.setComposicaoFerroviaria(composicaoFerroviaria);
 
@@ -47,6 +48,7 @@ public class ChegadaTerminalFerroviario {
 
         }
 
+        // retorna o sistema para ser tratado no momento de consumo da FEL
         return sistema;
     }
 
