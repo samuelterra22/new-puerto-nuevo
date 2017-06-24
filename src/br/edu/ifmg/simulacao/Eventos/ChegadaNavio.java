@@ -39,6 +39,8 @@ public class ChegadaNavio {
                 EventNotice eventNotice = new EventNotice();
                 eventNotice.setHoraInicio(sistema.getRelogio());
                 eventNotice.setHoraFim(sistema.getRelogio()+duracaoAtracamento);
+                eventNotice.setCais(caisReservado);
+                eventNotice.setEquipe(equipeReservada);
                 eventNotice.setEventoAtual(Tag.ChegadaNavio);
                 eventNotice.setEnventoDeTermino(Tag.FimAtracamento);
 
