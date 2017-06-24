@@ -38,6 +38,7 @@ public class ChegadaTerminalFerroviario {
             eventNotice.setEventoAtual(Tag.ChegadaTerminalFerroviario);
             eventNotice.setEnventoDeTermino(Tag.FimPosicionaTerminal);
 
+            // adicionar o evento na fel
             sistema.agendaNaFel(eventNotice);
 
         }else {
